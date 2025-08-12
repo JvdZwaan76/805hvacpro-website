@@ -14,46 +14,69 @@
   <!-- Header -->
   <header class="bg-blue-900 text-white py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold"><a href="/">805 HVAC Pro</a></h1>
-      <nav>
+      <h1 class="text-2xl font-bold"><a href="/" aria-label="805 HVAC Pro Home">805 HVAC Pro</a></h1>
+      <nav class="hidden md:flex">
         <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-blue-300">Home</a></li>
-          <li><a href="/about.html" class="hover:text-blue-300">About</a></li>
-          <li><a href="/services.html" class="hover:text-blue-300">Services</a></li>
-          <li><a href="/contact.html" class="hover:text-blue-300">Contact</a></li>
+          <li><a href="/" class="hover:text-blue-300" aria-label="Home Page">Home</a></li>
+          <li><a href="/about.html" class="hover:text-blue-300" aria-label="About Us Page">About</a></li>
+          <li><a href="/services.html" class="hover:text-blue-300" aria-label="Services Page">Services</a></li>
+          <li><a href="/contact.html" class="hover:text-blue-300" aria-label="Contact Us Page">Contact</a></li>
         </ul>
       </nav>
+      <button class="md:hidden text-white focus:outline-none" id="menu-toggle" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden hidden bg-blue-800" id="mobile-menu">
+      <ul class="flex flex-col space-y-4 p-4">
+        <li><a href="/" class="hover:text-blue-300" aria-label="Home Page">Home</a></li>
+        <li><a href="/about.html" class="hover:text-blue-300" aria-label="About Us Page">About</a></li>
+        <li><a href="/services.html" class="hover:text-blue-300" aria-label="Services Page">Services</a></li>
+        <li><a href="/contact.html" class="hover:text-blue-300" aria-label="Contact Us Page">Contact</a></li>
+      </ul>
     </div>
   </header>
 
   <!-- Contact Section -->
-  <section class="py-16 bg-gray-200">
+  <section class="py-12 sm:py-16 bg-gray-200">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Contact 805 HVAC Pro</h2>
-      <p class="text-lg text-center mb-6">Serving Thousand Oaks and the 805 area. Get in touch for HVAC services!</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8">Contact 805 HVAC Pro</h2>
+      <p class="text-base sm:text-lg text-center mb-6">Serving Thousand Oaks and the 805 area. Get in touch for HVAC services!</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         <div>
-          <p class="text-lg mb-4">Contact: Gustavo Viveros</p>
-          <p class="text-lg mb-4">Phone: <a href="tel:8056688329" class="text-blue-600 hover:underline">(805) 668-8329</a></p>
-          <p class="text-lg mb-4">Email: <a href="mailto:info@805hvacpro.com" class="text-blue-600 hover:underline">info@805hvacpro.com</a></p>
-          <p class="text-lg">Address: Thousand Oaks, CA 91362</p>
+          <p class="text-base sm:text-lg mb-4">Contact: Gustavo Viveros</p>
+          <p class="text-base sm:text-lg mb-4">Phone: <a href="tel:8056688329" class="text-blue-600 hover:underline">(805) 668-8329</a></p>
+          <p class="text-base sm:text-lg mb-4">Email: <a href="mailto:info@805hvacpro.com" class="text-blue-600 hover:underline">info@805hvacpro.com</a></p>
+          <p class="text-base sm:text-lg">Address: Thousand Oaks, CA 91362</p>
         </div>
         <div>
-          <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4"> <!-- Replace 'your-form-id' with actual from Formspree -->
-            <input type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded">
-            <input type="email" name="email" placeholder="Your Email" class="w-full p-2 border rounded">
-            <textarea name="message" placeholder="Your Message" class="w-full p-2 border rounded h-32"></textarea>
-            <button type="submit" class="bg-yellow-500 text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Submit</button>
+          <form action="https://formspree.io/f/xpwlbqyb" method="POST" class="space-y-4">
+            <input type="text" name="name" placeholder="Your Name" class="w-full p-2 border rounded text-sm sm:text-base" aria-label="Your Name">
+            <input type="email" name="_replyto" placeholder="Your Email" class="w-full p-2 border rounded text-sm sm:text-base" aria-label="Your Email">
+            <textarea name="message" placeholder="Your Message" class="w-full p-2 border rounded h-32 text-sm sm:text-base" aria-label="Your Message"></textarea>
+            <input type="hidden" name="_to" value="jaspervdz@me.com">
+            <button type="submit" class="bg-yellow-500 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400 text-base sm:text-lg">Submit</button>
           </form>
         </div>
       </div>
-      <p class="text-center mt-8"><a href="/" class="text-blue-600 hover:underline">Back to Home</a></p>
+      <p class="text-center mt-6 sm:mt-8"><a href="/" class="text-blue-600 hover:underline text-sm sm:text-base">Back to Home</a></p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white py-4 text-center">
-    <p>&copy; 2025 805 HVAC Pro. All rights reserved. <a href="/" class="text-yellow-300 hover:underline">Home</a> | <a href="/about.html" class="text-yellow-300 hover:underline">About</a> | <a href="/services.html" class="text-yellow-300 hover:underline">Services</a></p>
+    <p class="text-sm sm:text-base">&copy; 2025 805 HVAC Pro. All rights reserved. <a href="/" class="text-yellow-300 hover:underline">Home</a> | <a href="/about.html" class="text-yellow-300 hover:underline">About</a> | <a href="/services.html" class="text-yellow-300 hover:underline">Services</a></p>
   </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
