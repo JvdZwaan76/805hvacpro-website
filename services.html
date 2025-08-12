@@ -9,6 +9,8 @@
   <link rel="canonical" href="https://805hvacpro.com/services.html">
   <title>HVAC Services | 805 HVAC Pro - Thousand Oaks, CA</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,15 +38,15 @@
 </head>
 <body class="bg-gray-100 font-sans">
   <!-- Header -->
-  <header class="bg-blue-900 text-white py-4">
+  <header class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-4 shadow-md">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold"><a href="/" aria-label="805 HVAC Pro Home">805 HVAC Pro</a></h1>
       <nav class="hidden md:flex">
         <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-blue-300" aria-label="Home Page">Home</a></li>
-          <li><a href="/about.html" class="hover:text-blue-300" aria-label="About Us Page">About</a></li>
-          <li><a href="/services.html" class="hover:text-blue-300" aria-label="Services Page">Services</a></li>
-          <li><a href="/contact.html" class="hover:text-blue-300" aria-label="Contact Us Page">Contact</a></li>
+          <li><a href="/" class="hover:text-blue-300 transition duration-200" aria-label="Home Page">Home</a></li>
+          <li><a href="/about.html" class="hover:text-blue-300 transition duration-200" aria-label="About Us Page">About</a></li>
+          <li><a href="/services.html" class="hover:text-blue-300 transition duration-200" aria-label="Services Page">Services</a></li>
+          <li><a href="/contact.html" class="hover:text-blue-300 transition duration-200" aria-label="Contact Us Page">Contact</a></li>
         </ul>
       </nav>
       <button class="md:hidden text-white focus:outline-none" id="menu-toggle" aria-label="Toggle Menu">
@@ -55,59 +57,55 @@
     </div>
     <div class="md:hidden hidden bg-blue-800" id="mobile-menu">
       <ul class="flex flex-col space-y-4 p-4">
-        <li><a href="/" class="hover:text-blue-300" aria-label="Home Page">Home</a></li>
-        <li><a href="/about.html" class="hover:text-blue-300" aria-label="About Us Page">About</a></li>
-        <li><a href="/services.html" class="hover:text-blue-300" aria-label="Services Page">Services</a></li>
-        <li><a href="/contact.html" class="hover:text-blue-300" aria-label="Contact Us Page">Contact</a></li>
+        <li><a href="/" class="hover:text-blue-300 transition duration-200" aria-label="Home Page">Home</a></li>
+        <li><a href="/about.html" class="hover:text-blue-300 transition duration-200" aria-label="About Us Page">About</a></li>
+        <li><a href="/services.html" class="hover:text-blue-300 transition duration-200" aria-label="Services Page">Services</a></li>
+        <li><a href="/contact.html" class="hover:text-blue-300 transition duration-200" aria-label="Contact Us Page">Contact</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- Services Detail Section -->
+  <!-- Services Detail Section with Images -->
   <section class="py-12 sm:py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Our Comprehensive HVAC Services in Thousand Oaks & the 805 Area</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-4">Air Conditioning Services</h3>
-          <p class="text-sm sm:text-base">From installation of energy-efficient AC units to emergency repairs and routine maintenance, we handle all your cooling needs in Thousand Oaks.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 hover:shadow-xl">
+          <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg" alt="Air conditioning services in Thousand Oaks - 805 HVAC Pro" class="h-32 mx-auto mb-4 object-cover rounded">
+          <h3 class="text-xl font-semibold mb-4">Air Conditioning Services</h3>
+          <p>From installation of energy-efficient AC units to emergency repairs and routine maintenance, we handle all your cooling needs in Thousand Oaks.</p>
         </div>
-        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-4">Heating Services</h3>
-          <p class="text-sm sm:text-base">Expert furnace repairs, heat pump installations, and system upgrades to keep your home warm during cooler 805 area nights.</p>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 hover:shadow-xl">
+          <img src="https://images.pexels.com/photos/3771109/pexels-photo-3771109.jpeg" alt="Heating services in Thousand Oaks - 805 HVAC Pro" class="h-32 mx-auto mb-4 object-cover rounded">
+          <h3 class="text-xl font-semibold mb-4">Heating Services</h3>
+          <p>Expert furnace repairs, heat pump installations, and system upgrades to keep your home warm during cooler 805 area nights.</p>
         </div>
-        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-4">Air Quality Services</h3>
-          <p class="text-sm sm:text-base">Improve indoor air with purifiers, ventilation systems, and duct cleaning for healthier living in Thousand Oaks homes and businesses.</p>
-        </div>
-      </div>
-      <h3 class="text-xl sm:text-2xl font-bold mt-8 sm:mt-12 mb-4">Frequently Asked Questions</h3>
-      <div class="space-y-4">
-        <div>
-          <h4 class="font-semibold text-base sm:text-lg">How often should I service my HVAC system?</h4>
-          <p class="text-sm sm:text-base">Annual maintenance is recommended to ensure efficiency in the 805 area's climate.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold text-base sm:text-lg">What are signs I need air conditioning repair?</h4>
-          <p class="text-sm sm:text-base">Weak airflow, unusual noises, or rising bills – call us for fast service in Thousand Oaks.</p>
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center transition duration-200 hover:shadow-xl">
+          <img src="https://images.pexels.com/photos/4239068/pexels-photo-4239068.jpeg" alt="Air quality services in Thousand Oaks - 805 HVAC Pro" class="h-32 mx-auto mb-4 object-cover rounded">
+          <h3 class="text-xl font-semibold mb-4">Air Quality Services</h3>
+          <p>Improve indoor air with purifiers, ventilation systems, and duct cleaning for healthier living in Thousand Oaks homes and businesses.</p>
         </div>
       </div>
-      <p class="text-center mt-6 sm:mt-8"><a href="/contact.html" class="text-blue-600 hover:underline text-sm sm:text-base">Schedule a service today</a></p>
+      <h3 class="text-2xl font-bold mt-12 mb-6">Frequently Asked Questions</h3>
+      <div class="space-y-6">
+        <div>
+          <h4 class="font-semibold text-lg">How often should I service my HVAC system?</h4>
+          <p>Annual maintenance is recommended to ensure efficiency in the 805 area's climate.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-lg">What are signs I need air conditioning repair?</h4>
+          <p>Weak airflow, unusual noises, or rising bills – call us for fast service in Thousand Oaks.</p>
+        </div>
+      </div>
+      <p class="text-center mt-8"><a href="/contact.html" class="bg-yellow-500 text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition duration-200">Schedule a service today</a></p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-4 text-center">
-    <p class="text-sm sm:text-base">&copy; 2025 805 HVAC Pro. All rights reserved. <a href="/" class="text-yellow-300 hover:underline">Home</a> | <a href="/about.html" class="text-yellow-300 hover:underline">About</a> | <a href="/contact.html" class="text-yellow-300 hover:underline">Contact</a></p>
+  <footer class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-4 text-center shadow-inner">
+    <p class="text-sm sm:text-base">&copy; 2025 805 HVAC Pro. All rights reserved. <a href="/" class="text-yellow-300 hover:underline transition duration-200">Home</a> | <a href="/about.html" class="text-yellow-300 hover:underline transition duration-200">About</a> | <a href="/contact.html" class="text-yellow-300 hover:underline transition duration-200">Contact</a></p>
   </footer>
 
-  <!-- Mobile Menu Script -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
