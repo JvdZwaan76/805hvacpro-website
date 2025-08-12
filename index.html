@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>805 HVAC Pro - Thousand Oaks HVAC Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">805 HVAC Pro</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#home" class="hover:text-blue-300">Home</a></li>
+          <li><a href="#services" class="hover:text-blue-300">Services</a></li>
+          <li><a href="#contact" class="hover:text-blue-300">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section with Background Image -->
+  <section id="home" class="bg-blue-700 text-white py-20 text-center bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/12099249/pexels-photo-12099249.jpeg');">
+    <div class="container mx-auto px-4 bg-blue-900 bg-opacity-60 py-10 rounded-lg">
+      <h2 class="text-4xl font-bold mb-4">Keeping Thousand Oaks Cool & Comfortable</h2>
+      <p class="text-lg mb-6">Your trusted 805 area HVAC experts for heating, cooling, and air quality solutions.</p>
+      <a href="#contact" class="bg-yellow-500 text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Services Section with Icons -->
+  <section id="services" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg" alt="Air Conditioning" class="h-16 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-4">Air Conditioning</h3>
+          <p>Expert installation, repair, and maintenance for your cooling systems in the 805 area.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <img src="https://images.pexels.com/photos/3771109/pexels-photo-3771109.jpeg" alt="Heating" class="h-16 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-4">Heating</h3>
+          <p>Reliable furnace and heat pump services to keep your home warm year-round.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <img src="https://images.pexels.com/photos/4239068/pexels-photo-4239068.jpeg" alt="Air Quality" class="h-16 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-4">Air Quality</h3>
+          <p>Advanced solutions for cleaner, healthier air in your Thousand Oaks home or business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with Subtle Image Overlay -->
+  <section id="contact" class="bg-gray-200 py-16 bg-opacity-80 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/5998079/pexels-photo-5998079.jpeg');">
+    <div class="container mx-auto px-4 text-center bg-white bg-opacity-90 py-10 rounded-lg">
+      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+      <p class="text-lg mb-6">Serving Thousand Oaks and the 805 area. Reach out for top-notch HVAC services!</p>
+      <p class="text-lg mb-4">Phone: (805) 555-1234</p>
+      <p class="text-lg mb-4">Email: info@805hvacpro.com</p>
+      <p class="text-lg">Address: Thousand Oaks, CA 91362</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-4 text-center">
+    <p>&copy; 2025 805 HVAC Pro. All rights reserved.</p>
+  </footer>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
