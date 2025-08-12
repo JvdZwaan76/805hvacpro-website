@@ -7,16 +7,16 @@
   <meta name="keywords" content="HVAC Thousand Oaks, 805 HVAC, air conditioning repair Thousand Oaks, heating services 805 area, HVAC installation CA, air quality solutions Thousand Oaks, local HVAC contractor">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://805hvacpro.com">
-  <!-- Open Graph Tags for Social Sharing -->
   <meta property="og:title" content="HVAC Services in Thousand Oaks, CA | 805 HVAC Pro">
   <meta property="og:description" content="Trusted HVAC experts serving Thousand Oaks and the 805 area for heating, cooling, and air quality needs. Contact Gustavo Viveros today.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://805hvacpro.com">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1581092919849-79b7d07ae21a"> <!-- Hero image as fallback -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581092919849-79b7d07ae21a">
   <meta property="og:site_name" content="805 HVAC Pro">
   <title>HVAC Services in Thousand Oaks, CA | 805 HVAC Pro - Air Conditioning & Heating Repair</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Structured Data (Schema.org JSON-LD) for Local SEO -->
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,7 +53,7 @@
       "closes": "17:00"
     },
     "sameAs": [
-      "https://www.google.com/search?q=805+HVAC+Pro+Thousand+Oaks"  // Add actual social profiles if available
+      "https://www.google.com/search?q=805+HVAC+Pro+Thousand+Oaks"
     ]
   }
   </script>
@@ -62,59 +62,152 @@
   <!-- Header -->
   <header class="bg-blue-900 text-white py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold"><a href="/">805 HVAC Pro</a></h1>
-      <nav>
+      <h1 class="text-2xl font-bold"><a href="/" aria-label="805 HVAC Pro Home">805 HVAC Pro</a></h1>
+      <nav class="hidden md:flex">
         <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-blue-300">Home</a></li>
-          <li><a href="/about.html" class="hover:text-blue-300">About</a></li>
-          <li><a href="/services.html" class="hover:text-blue-300">Services</a></li>
-          <li><a href="/contact.html" class="hover:text-blue-300">Contact</a></li>
+          <li><a href="/" class="hover:text-blue-300" aria-label="Home Page">Home</a></li>
+          <li><a href="/about.html" class="hover:text-blue-300" aria-label="About Us Page">About</a></li>
+          <li><a href="/services.html" class="hover:text-blue-300" aria-label="Services Page">Services</a></li>
+          <li><a href="/contact.html" class="hover:text-blue-300" aria-label="Contact Us Page">Contact</a></li>
         </ul>
       </nav>
+      <button class="md:hidden text-white focus:outline-none" id="menu-toggle" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="md:hidden hidden bg-blue-800" id="mobile-menu">
+      <ul class="flex flex-col space-y-4 p-4">
+        <li><a href="/" class="hover:text-blue-300" aria-label="Home Page">Home</a></li>
+        <li><a href="/about.html" class="hover:text-blue-300" aria-label="About Us Page">About</a></li>
+        <li><a href="/services.html" class="hover:text-blue-300" aria-label="Services Page">Services</a></li>
+        <li><a href="/contact.html" class="hover:text-blue-300" aria-label="Contact Us Page">Contact</a></li>
+      </ul>
     </div>
   </header>
 
-  <!-- Hero Section with Background Image -->
-  <section id="home" class="bg-blue-700 text-white py-20 text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581092919849-79b7d07ae21a');">
-    <div class="container mx-auto px-4 bg-blue-900 bg-opacity-60 py-10 rounded-lg">
-      <h2 class="text-4xl font-bold mb-4">Expert HVAC Services in Thousand Oaks, CA – Keeping You Cool & Comfortable</h2>
-      <p class="text-lg mb-6">Your trusted local HVAC experts in the 805 area for air conditioning repair, heating installation, and air quality solutions. Led by Gustavo Viveros. <a href="/services.html" class="text-yellow-300 hover:underline">Learn more about our services</a>.</p>
-      <a href="/contact.html" class="bg-yellow-500 text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+  <!-- Hero Carousel Section -->
+  <section id="home" class="relative">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide relative">
+          <img src="https://images.unsplash.com/photos/a-person-holding-a-remote-control-in-front-of-a-wall-mounted-air-conditioner-3iLFQj2bXq0" alt="Air conditioning unit in Thousand Oaks home - 805 HVAC Pro cooling services" class="w-full h-64 sm:h-96 object-cover">
+          <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white text-center p-4">
+            <div>
+              <h2 class="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">Expert Cooling Solutions</h2>
+              <p class="text-base sm:text-lg mb-2 sm:mb-6">Stay cool in the 805 area with our AC repair and installation.</p>
+              <a href="/contact.html" class="bg-yellow-500 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img src="https://images.unsplash.com/photos/heating-specialist-with-gas-leak-detector-in-his-hand-performing-necessary-check-vG7-nbVmTM0" alt="Heating specialist checking system in Thousand Oaks - 805 HVAC Pro heating services" class="w-full h-64 sm:h-96 object-cover">
+          <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white text-center p-4">
+            <div>
+              <h2 class="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">Reliable Heating Services</h2>
+              <p class="text-base sm:text-lg mb-2 sm:mb-6">Warm and efficient heating for your Thousand Oaks home.</p>
+              <a href="/contact.html" class="bg-yellow-500 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img src="https://images.unsplash.com/photos/close-photography-of-air-vent-qVXFewdVWn4" alt="Air vent for quality ventilation in 805 area - 805 HVAC Pro air quality solutions" class="w-full h-64 sm:h-96 object-cover">
+          <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white text-center p-4">
+            <div>
+              <h2 class="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">Cleaner Air Quality</h2>
+              <p class="text-base sm:text-lg mb-2 sm:mb-6">Breathe easier with our advanced ventilation systems.</p>
+              <a href="/contact.html" class="bg-yellow-500 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img src="https://images.unsplash.com/photos/construction-worker-checking-newly-installed-new-air-ventilation-shaft-on-ceiling-of-large-commercial-building-uWegZxsUTak" alt="HVAC technician installing ventilation in Thousand Oaks business - 805 HVAC Pro general services" class="w-full h-64 sm:h-96 object-cover">
+          <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white text-center p-4">
+            <div>
+              <h2 class="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">Professional HVAC Installation</h2>
+              <p class="text-base sm:text-lg mb-2 sm:mb-6">Expert setup for homes and businesses in the 805 area.</p>
+              <a href="/contact.html" class="bg-yellow-500 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img src="https://images.unsplash.com/photos/air-conditioner-compressor-installed-in-old-building-outdoor-split-wall-type-air-conditioner-compressor-unit-inverter-installed-on-the-outside-of-the-building-air-conditioner-compressor-outdoor-unit-SimSA1JbMt8" alt="Outdoor HVAC compressor unit in Thousand Oaks - 805 HVAC Pro outdoor systems" class="w-full h-64 sm:h-96 object-cover">
+          <div class="absolute inset-0 bg-blue-900 bg-opacity-50 flex items-center justify-center text-white text-center p-4">
+            <div>
+              <h2 class="text-2xl sm:text-4xl font-bold mb-2 sm:mb-4">Durable Outdoor Units</h2>
+              <p class="text-base sm:text-lg mb-2 sm:mb-6">Reliable external HVAC components for all weather.</p>
+              <a href="/contact.html" class="bg-yellow-500 text-blue-900 px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold hover:bg-yellow-400">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination and Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next text-white"></div>
+      <div class="swiper-button-prev text-white"></div>
     </div>
   </section>
 
   <!-- Services Overview Section -->
-  <section id="services" class="py-16">
+  <section id="services" class="py-12 sm:py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Our HVAC Services in Thousand Oaks & the 805 Area</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md text-center">
-          <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" alt="Air conditioning repair and installation in Thousand Oaks 805 area" class="h-16 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-4">Air Conditioning</h3>
-          <p>Expert air conditioning repair, installation, and maintenance for cooling systems in Thousand Oaks and the 805 area.</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Our HVAC Services in Thousand Oaks & the 805 Area</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+          <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed" alt="Air conditioning repair and installation in Thousand Oaks 805 area" class="h-12 sm:h-16 mx-auto mb-4 object-cover">
+          <h3 class="text-lg sm:text-xl font-semibold mb-4">Air Conditioning</h3>
+          <p class="text-sm sm:text-base">Expert air conditioning repair, installation, and maintenance for cooling systems in Thousand Oaks and the 805 area.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md text-center">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Heating services and furnace repair in Thousand Oaks CA" class="h-16 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-4">Heating</h3>
-          <p>Reliable heating services, including furnace and heat pump repair, to keep your Thousand Oaks home warm year-round.</p>
+        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Heating services and furnace repair in Thousand Oaks CA" class="h-12 sm:h-16 mx-auto mb-4 object-cover">
+          <h3 class="text-lg sm:text-xl font-semibold mb-4">Heating</h3>
+          <p class="text-sm sm:text-base">Reliable heating services, including furnace and heat pump repair, to keep your Thousand Oaks home warm year-round.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md text-center">
-          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Air quality solutions and ventilation in 805 area Thousand Oaks" class="h-16 mx-auto mb-4">
-          <h3 class="text-xl font-semibold mb-4">Air Quality</h3>
-          <p>Advanced air quality solutions for cleaner, healthier indoor air in your Thousand Oaks home or business in the 805 area.</p>
+        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md text-center">
+          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Air quality solutions and ventilation in 805 area Thousand Oaks" class="h-12 sm:h-16 mx-auto mb-4 object-cover">
+          <h3 class="text-lg sm:text-xl font-semibold mb-4">Air Quality</h3>
+          <p class="text-sm sm:text-base">Advanced air quality solutions for cleaner, healthier indoor air in your Thousand Oaks home or business in the 805 area.</p>
         </div>
       </div>
-      <p class="text-center mt-8"><a href="/services.html" class="text-blue-600 hover:underline">View full services</a></p>
+      <p class="text-center mt-6 sm:mt-8"><a href="/services.html" class="text-blue-600 hover:underline text-sm sm:text-base">View full services</a></p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white py-4 text-center">
-    <p>&copy; 2025 805 HVAC Pro. All rights reserved. Providing HVAC services in Thousand Oaks, CA. <a href="/about.html" class="text-yellow-300 hover:underline">About Us</a> | <a href="/services.html" class="text-yellow-300 hover:underline">Services</a> | <a href="/contact.html" class="text-yellow-300 hover:underline">Contact</a></p>
+    <p class="text-sm sm:text-base">&copy; 2025 805 HVAC Pro. All rights reserved. Providing HVAC services in Thousand Oaks, CA. <a href="/about.html" class="text-yellow-300 hover:underline">About Us</a> | <a href="/services.html" class="text-yellow-300 hover:underline">Services</a> | <a href="/contact.html" class="text-yellow-300 hover:underline">Contact</a></p>
   </footer>
 
-  <!-- Smooth Scroll Script -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper and Mobile Menu Script -->
   <script>
+    // Initialize Swiper Carousel
+    var swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth Scroll for Anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
