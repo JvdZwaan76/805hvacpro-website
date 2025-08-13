@@ -1,23 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://805hvacpro.com/</loc>
-    <lastmod>2025-08-11</lastmod>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-01-ac-unit.jpg</image:loc>
+      <image:title>Premium Air Conditioning Services in Thousand Oaks by 805 HVAC Pro</image:title>
+      <image:caption>Elite HVAC services for luxury homes and commercial properties in the 805 area</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-02-furnace-service.jpg</image:loc>
+      <image:title>Premium Heating Services in Westlake Village by 805 HVAC Pro</image:title>
+      <image:caption>Sophisticated heating solutions for discerning clients</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-03-air-purifier.jpg</image:loc>
+      <image:title>Advanced Air Quality Solutions for Luxury Homes</image:title>
+      <image:caption>State-of-the-art air purification and ventilation systems</image:caption>
+    </image:image>
   </url>
+
+  <!-- About Page -->
   <url>
     <loc>https://805hvacpro.com/about.html</loc>
-    <lastmod>2025-08-11</lastmod>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-04-duct-install.jpg</image:loc>
+      <image:title>Gustavo Viveros - Master HVAC Technician and Owner of 805 HVAC Pro</image:title>
+      <image:caption>Over 15 years of elite HVAC experience serving luxury properties in the 805 area</image:caption>
+    </image:image>
   </url>
+
+  <!-- Services Page -->
   <url>
     <loc>https://805hvacpro.com/services.html</loc>
-    <lastmod>2025-08-11</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-01-ac-unit.jpg</image:loc>
+      <image:title>Air Conditioning Services in Thousand Oaks</image:title>
+      <image:caption>Premium cooling solutions for luxury homes and commercial properties</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-02-furnace-service.jpg</image:loc>
+      <image:title>Heating Services in Westlake Village</image:title>
+      <image:caption>Sophisticated heating systems and maintenance services</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-03-air-purifier.jpg</image:loc>
+      <image:title>Air Quality Solutions for the 805 Area</image:title>
+      <image:caption>Advanced purification and ventilation systems for healthier indoor environments</image:caption>
+    </image:image>
   </url>
+
+  <!-- Contact Page -->
   <url>
     <loc>https://805hvacpro.com/contact.html</loc>
-    <lastmod>2025-08-11</lastmod>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://805hvacpro.com/assets/images/805-hvac-pro-conejo-valley-hero-05-outdoor-unit.jpg</image:loc>
+      <image:title>Contact 805 HVAC Pro for Premium HVAC Services</image:title>
+      <image:caption>Get your free consultation for luxury HVAC solutions in Thousand Oaks</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Service-Specific Landing Pages (Future Expansion) -->
+  <url>
+    <loc>https://805hvacpro.com/air-conditioning-thousand-oaks</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://805hvacpro.com/heating-services-westlake-village</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/air-quality-solutions-805-area</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/commercial-hvac-conejo-valley</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/emergency-hvac-service-805</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Location-Specific Pages (Future Expansion) -->
+  <url>
+    <loc>https://805hvacpro.com/hvac-services-thousand-oaks</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/hvac-services-westlake-village</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/hvac-services-camarillo</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/hvac-services-simi-valley</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/hvac-services-ventura</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/hvac-services-oxnard</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog/Resources Pages (Future Content Marketing) -->
+  <url>
+    <loc>https://805hvacpro.com/blog</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/hvac-maintenance-tips-thousand-oaks</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/energy-efficient-hvac-systems-805-area</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/luxury-home-hvac-design-westlake-village</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Testimonials and Case Studies -->
+  <url>
+    <loc>https://805hvacpro.com/testimonials</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/case-studies</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://805hvacpro.com/privacy-policy</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/terms-of-service</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Special Landing Pages for Marketing Campaigns -->
+  <url>
+    <loc>https://805hvacpro.com/luxury-hvac-consultation</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/spring-hvac-maintenance-special</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://805hvacpro.com/summer-ac-preparation-805</loc>
+    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
