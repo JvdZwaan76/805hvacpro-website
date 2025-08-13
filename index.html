@@ -1,30 +1,4 @@
-<!-- Enhanced SEO Meta Tags -->
-  <meta name="google-site-verification" content="">
-  <meta name="msvalidate.01" content="">
-  <meta name="yandex-verification" content="">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="format-detection" content="address=no">
-  
-  <!-- Additional Open Graph Tags -->
-  <meta property="og:image:secure_url" content="https://805hvacpro.com/assets/images/805-hvac-pro-luxury-hero-1200x630.jpg">
-  <meta property="og:video" content="">
-  <meta property="article:author" content="Gustavo Viveros">
-  <meta property="article:publisher" content="805 HVAC Pro">
-  
-  <!-- Additional Twitter Card Tags -->
-  <meta name="twitter:creator" content="@805hvacpro">
-  <meta name="twitter:site" content="@805hvacpro">
-  
-  <!-- Rich Snippets -->
-  <meta name="application-name" content="805 HVAC Pro">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-status-bar-style" content="black-translucent">
-  
-  <!-- Security Headers -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/HVACBusiness">
 <head>
   <meta charset="UTF-8">
@@ -78,6 +52,34 @@
   <meta name="twitter:image" content="https://805hvacpro.com/assets/images/805-hvac-pro-luxury-hero-1200x630.jpg">
   <meta name="twitter:image:alt" content="805 HVAC Pro - Luxury HVAC Services in Thousand Oaks">
   
+  <!-- Enhanced SEO Meta Tags -->
+  <meta name="google-site-verification" content="">
+  <meta name="msvalidate.01" content="">
+  <meta name="yandex-verification" content="">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  
+  <!-- Additional Open Graph Tags -->
+  <meta property="og:image:secure_url" content="https://805hvacpro.com/assets/images/805-hvac-pro-luxury-hero-1200x630.jpg">
+  <meta property="og:video" content="">
+  <meta property="article:author" content="Gustavo Viveros">
+  <meta property="article:publisher" content="805 HVAC Pro">
+  
+  <!-- Additional Twitter Card Tags -->
+  <meta name="twitter:creator" content="@805hvacpro">
+  <meta name="twitter:site" content="@805hvacpro">
+  
+  <!-- Rich Snippets -->
+  <meta name="application-name" content="805 HVAC Pro">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  
   <!-- Apple Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -105,15 +107,12 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
   
-  <!-- Preload Critical Assets -->
-  <link rel="preload" href="/styles.css" as="style">
-  <link rel="preload" href="/script.js" as="script">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+  <!-- Preload Critical Assets (only above-the-fold resources) -->
   <link rel="preload" href="/assets/images/805-hvac-pro-conejo-valley-hero-01-ac-unit.jpg" as="image" type="image/jpeg">
   
-  <!-- Styles -->
+  <!-- Styles (load immediately, not preloaded to avoid duplication) -->
   <link rel="stylesheet" href="/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
   
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -526,6 +525,18 @@
       </div>
     </div>
   </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb" role="navigation">
+    <div class="container">
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Home</span>
+          <meta itemprop="position" content="1" />
+        </li>
+      </ol>
+    </div>
+  </nav>
 
   <!-- Main Content -->
   <main id="main-content">
