@@ -240,13 +240,42 @@
         
         // Add validation feedback
         setupValidationFeedback(input);
+        
+        // Add loading state on submit
+        setupLoadingState(input);
       });
 
-      // Handle form submission
+      // Handle form submission with enhanced tracking
       form.addEventListener('submit', function(e) {
         if (!validateForm(form)) {
           e.preventDefault();
           return false;
+        }
+
+        // Add loading state to submit button
+        const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        if (submitBtn) {
+          submitBtn.classList.add('loading');
+          submitBtn.disabled = true;
+          
+          // Store original text
+          const originalText = submitBtn.textContent || submitBtn.value;
+          if (submitBtn.textContent) {
+            submitBtn.textContent = 'Sending...';
+          } else {
+            submitBtn.value = 'Sending...';
+          }
+          
+          // Reset after timeout (fallback)
+          setTimeout(() => {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            if (submitBtn.textContent !== originalText) {
+              submitBtn.textContent = originalText;
+            } else {
+              submitBtn.value = originalText;
+            }
+          }, 5000);
         }
 
         // Track form submission
@@ -261,6 +290,41 @@
           });
         }
       });
+      
+      // Track form start
+      form.addEventListener('focusin', function() {
+        if (!form.dataset.started) {
+          form.dataset.started = 'true';
+          
+          if (typeof trackFormStart === 'function') {
+            trackFormStart(form.getAttribute('name') || 'contact_form');
+          }
+          
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_start', {
+              event_category: 'engagement',
+              event_label: form.getAttribute('name') || 'contact_form'
+            });
+          }
+        }
+      });
+    });
+  }
+
+  /**
+   * Setup loading state for individual inputs
+   */
+  function setupLoadingState(input) {
+    input.addEventListener('input', function() {
+      // Remove any existing loading states when user types
+      const form = input.closest('form');
+      if (form) {
+        const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        if (submitBtn && submitBtn.classList.contains('loading')) {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+        }
+      }
     });
   }
 
