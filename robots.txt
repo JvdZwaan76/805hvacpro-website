@@ -1,11 +1,11 @@
-# Robots.txt for 805hvacpro.com
-# Enhanced SEO configuration for premium HVAC services
-
-# Allow all search engines access to main content
 User-agent: *
 Allow: /
+Disallow: /assets/temp/
+Disallow: /private/
+Disallow: /*.pdf$
+Disallow: /cgi-bin/
 
-# Specific permissions for major search engines
+# Specific bot instructions
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -18,259 +18,18 @@ User-agent: Slurp
 Allow: /
 Crawl-delay: 2
 
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
+# Block unwanted bots
+User-agent: SemrushBot
+Disallow: /
 
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 3
-
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Block access to sensitive areas
-User-agent: *
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /backup/
-Disallow: /logs/
-Disallow: /cache/
-Disallow: /tmp/
-Disallow: /test/
-Disallow: /staging/
-Disallow: /dev/
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /wp-content/themes/
-Disallow: /cgi-bin/
-Disallow: /scripts/
-
-# Block access to specific file types that shouldn't be indexed
-User-agent: *
-Disallow: *.php$
-Disallow: *.inc$
-Disallow: *.asp$
-Disallow: *.aspx$
-Disallow: *.pl$
-Disallow: *.py$
-Disallow: *.jsp$
-Disallow: *.sh$
-
-# Block access to common CMS and development files
-User-agent: *
-Disallow: /composer.json
-Disallow: /composer.lock
-Disallow: /package.json
-Disallow: /package-lock.json
-Disallow: /yarn.lock
-Disallow: /webpack.config.js
-Disallow: /gulpfile.js
-Disallow: /gruntfile.js
-Disallow: /.htaccess
-Disallow: /.htpasswd
-Disallow: /web.config
-Disallow: /README.md
-Disallow: /LICENSE
-Disallow: /.env
-Disallow: /.env.*
-
-# Block common query parameters that create duplicate content
-User-agent: *
-Disallow: /*?utm_*
-Disallow: /*?ref=*
-Disallow: /*?source=*
-Disallow: /*?campaign=*
-Disallow: /*?fbclid=*
-Disallow: /*?gclid=*
-Disallow: /*?sort=*
-Disallow: /*?filter=*
-Disallow: /*?page=*
-Disallow: /*?limit=*
-
-# Block problematic bots and scrapers
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: MJ12bot
 Disallow: /
 
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-User-agent: SEOkicks
-Disallow: /
-
-User-agent: SEOkicks-Robot
-Disallow: /
-
-User-agent: spbot
-Disallow: /
-
-User-agent: MegaIndex.ru
-Disallow: /
-
-User-agent: BLEXBot
-Disallow: /
-
-User-agent: SeznamBot
-Disallow: /
-
-User-agent: Mail.RU_Bot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: AI2Bot
-Disallow: /
-
-# Block specific aggressive crawlers
-User-agent: grapeshot
-Disallow: /
-
-User-agent: proximic
-Disallow: /
-
-User-agent: brandwatch
-Disallow: /
-
-User-agent: Buzzbot
-Disallow: /
-
-User-agent: 008
-Disallow: /
-
-User-agent: ia_archiver
-Disallow: /
-
-User-agent: ScoutJet
-Disallow: /
-
-User-agent: Sogou
-Disallow: /
-
-User-agent: 360Spider
-Disallow: /
-
-# Allow access to important assets for rendering
-User-agent: *
-Allow: /assets/
-Allow: /styles.css
-Allow: /script.js
-Allow: /favicon.ico
-Allow: /robots.txt
-Allow: /sitemap.xml
-Allow: /site.webmanifest
-
-# Specific allowances for Google services
-User-agent: Googlebot
-Allow: /assets/images/
-Allow: /assets/icons/
-Allow: /assets/css/
-Allow: /assets/js/
-
-User-agent: Googlebot-Image
-Allow: /assets/images/
-Allow: /assets/icons/
-
-User-agent: Googlebot-Video
-Allow: /assets/videos/
-
-# Social media bot allowances for rich previews
-User-agent: facebookexternalhit
-Allow: /assets/images/
-
-User-agent: Twitterbot
-Allow: /assets/images/
-
-User-agent: LinkedInBot
-Allow: /assets/images/
-
-User-agent: WhatsApp
-Allow: /assets/images/
-
-User-agent: TelegramBot
-Allow: /assets/images/
-
-User-agent: SkypeUriPreview
-Allow: /assets/images/
-
-User-agent: Discordbot
-Allow: /assets/images/
-
-User-agent: Slackbot
-Allow: /assets/images/
-
-# Speed up crawling for trusted bots
-User-agent: Googlebot
-Crawl-delay: 0
-
-User-agent: Googlebot-Image
-Crawl-delay: 0
-
-User-agent: Googlebot-News
-Crawl-delay: 0
-
-User-agent: Googlebot-Video
-Crawl-delay: 0
-
-# Sitemap locations
+# Sitemap location
 Sitemap: https://805hvacpro.com/sitemap.xml
-Sitemap: https://805hvacpro.com/sitemap-images.xml
-Sitemap: https://805hvacpro.com/sitemap-pages.xml
-Sitemap: https://805hvacpro.com/sitemap-locations.xml
-Sitemap: https://805hvacpro.com/sitemap-services.xml
 
-# Clean URLs directive
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&gclid&fbclid&msclkid&ref&source
-
-# Host directive (for Yandex and some other search engines)
-Host: 805hvacpro.com
-
-# Additional SEO directives
-# Cache directive for static assets
-User-agent: *
-Allow: /assets/*
-Cache: /assets/* 86400
-
-# Mobile-first indexing support
-User-agent: Googlebot-Mobile
-Allow: /
-
-# Request rate for premium hosting
-Request-rate: 1/10s
-
-# Preferred time for crawling (PST business hours)
-Visit-time: 0800-1800
-
-# End of robots.txt
+# Host directive (preferred domain)
+Host: https://805hvacpro.com
