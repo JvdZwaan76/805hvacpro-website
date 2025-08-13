@@ -1,0 +1,7 @@
+Contact: mailto:security@805hvacpro.com
+Contact: tel:+1-805-668-8329
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://805hvacpro.com/.well-known/security.txt
+Policy: https://805hvacpro.com/security-policy
+Acknowledgments: https://805hvacpro.com/security-acknowledgments
