@@ -449,61 +449,66 @@
   </script>
 </head>
 
-<body class="bg-gray-50 font-primary antialiased text-gray-800">
+<body>
   <!-- Header -->
-  <header class="header py-6 shadow-lg">
+  <header class="header">
     <div class="header-content">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <h1 class="logo" itemprop="name">
-          <a href="/" aria-label="805 HVAC Pro Home" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'logo'});">
-            805 HVAC Pro
-          </a>
-        </h1>
-        
-        <nav class="hidden md:flex" role="navigation" aria-label="Main navigation">
-          <ul class="nav space-x-8">
-            <li><a href="/" class="nav-link active" aria-label="Home Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'home'});">Home</a></li>
-            <li><a href="/about.html" class="nav-link" aria-label="About Us Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'about'});">About</a></li>
-            <li><a href="/services.html" class="nav-link" aria-label="Services Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'services'});">Services</a></li>
-            <li><a href="/contact.html" class="nav-link" aria-label="Contact Us Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'contact'});">Contact</a></li>
-          </ul>
-        </nav>
-        
-        <div class="hidden md:flex items-center space-x-4">
-          <a href="tel:8056688329" 
-             class="btn btn-secondary btn-sm" 
-             onclick="trackPhoneClick(); trackPremiumInteraction('header_phone_click');"
-             aria-label="Call 805 HVAC Pro">
-            Call Now: (805) 668-8329
-          </a>
-        </div>
-        
-        <button class="md:hidden text-white focus:outline-none" 
-                id="menu-toggle" 
-                aria-label="Toggle Menu"
-                onclick="gtag('event', 'click', {event_category: 'ui', event_label: 'mobile_menu_toggle'});">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-      
-      <!-- Mobile Menu -->
-      <div class="md:hidden hidden bg-indigo-800" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
-        <ul class="flex flex-col space-y-4 p-6 text-center">
-          <li><a href="/" class="nav-link text-xl font-medium" aria-label="Home Page">Home</a></li>
-          <li><a href="/about.html" class="nav-link text-xl font-medium" aria-label="About Us Page">About</a></li>
-          <li><a href="/services.html" class="nav-link text-xl font-medium" aria-label="Services Page">Services</a></li>
-          <li><a href="/contact.html" class="nav-link text-xl font-medium" aria-label="Contact Us Page">Contact</a></li>
-          <li class="pt-4">
+      <div class="container">
+        <div class="flex items-center justify-between">
+          <div class="logo" itemprop="name">
+            <a href="/" aria-label="805 HVAC Pro Home" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'logo'});">
+              805 HVAC Pro
+            </a>
+          </div>
+          
+          <nav class="hidden md:flex" role="navigation" aria-label="Main navigation">
+            <ul class="nav">
+              <li><a href="/" class="nav-link active" aria-label="Home Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'home'});">Home</a></li>
+              <li><a href="/about.html" class="nav-link" aria-label="About Us Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'about'});">About</a></li>
+              <li><a href="/services.html" class="nav-link" aria-label="Services Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'services'});">Services</a></li>
+              <li><a href="/contact.html" class="nav-link" aria-label="Contact Us Page" onclick="gtag('event', 'click', {event_category: 'navigation', event_label: 'contact'});">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="hidden md:flex items-center">
             <a href="tel:8056688329" 
-               class="btn btn-secondary" 
-               onclick="trackPhoneClick();"
+               class="btn btn-secondary btn-sm" 
+               onclick="trackPhoneClick(); trackPremiumInteraction('header_phone_click');"
                aria-label="Call 805 HVAC Pro">
               Call Now: (805) 668-8329
             </a>
-          </li>
-        </ul>
+          </div>
+          
+          <button class="md:hidden text-white cursor-pointer" 
+                  id="menu-toggle" 
+                  aria-label="Toggle Menu"
+                  aria-expanded="false"
+                  onclick="gtag('event', 'click', {event_category: 'ui', event_label: 'mobile_menu_toggle'});">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+          <div class="py-4">
+            <ul class="flex flex-col space-y-2">
+              <li><a href="/" class="nav-link text-lg font-medium active" aria-label="Home Page">Home</a></li>
+              <li><a href="/about.html" class="nav-link text-lg font-medium" aria-label="About Us Page">About</a></li>
+              <li><a href="/services.html" class="nav-link text-lg font-medium" aria-label="Services Page">Services</a></li>
+              <li><a href="/contact.html" class="nav-link text-lg font-medium" aria-label="Contact Us Page">Contact</a></li>
+              <li class="pt-4">
+                <a href="tel:8056688329" 
+                   class="btn btn-secondary w-full" 
+                   onclick="trackPhoneClick();"
+                   aria-label="Call 805 HVAC Pro">
+                  Call Now: (805) 668-8329
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -516,27 +521,29 @@
         <div class="swiper-slide relative">
           <img src="/assets/images/805-hvac-pro-conejo-valley-hero-01-ac-unit.jpg" 
                alt="Luxury air conditioning installation in Thousand Oaks by 805 HVAC Pro" 
-               class="w-full h-72 sm:h-96 lg:h-[600px] object-cover" 
+               class="w-full h-screen object-cover" 
                loading="eager"
                itemprop="image">
           <div class="hero-overlay"></div>
-          <div class="hero-content absolute inset-0 flex items-center justify-center text-white text-center p-4">
-            <div class="max-w-4xl">
-              <h2 class="hero-title fade-in">Elite Cooling Solutions</h2>
-              <p class="hero-subtitle slide-up">Experience unparalleled comfort with our premium air conditioning systems, designed for discerning homeowners in the 805 area.</p>
-              <div class="space-x-4">
-                <a href="/contact.html" 
-                   class="btn btn-secondary btn-lg scale-in"
-                   onclick="trackPremiumInteraction('hero_cta_cooling'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_cooling'});"
-                   aria-label="Get premium cooling consultation">
-                  Schedule Consultation
-                </a>
-                <a href="tel:8056688329" 
-                   class="btn btn-outline btn-lg scale-in"
-                   onclick="trackPhoneClick(); trackPremiumInteraction('hero_phone_cooling');"
-                   aria-label="Call for immediate cooling service">
-                  Call Now
-                </a>
+          <div class="hero-content">
+            <div class="container">
+              <div class="max-w-4xl mx-auto text-center">
+                <h1 class="hero-title fade-in">Elite Cooling Solutions</h1>
+                <p class="hero-subtitle slide-up">Experience unparalleled comfort with our premium air conditioning systems, designed for discerning homeowners in the 805 area.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 scale-in">
+                  <a href="/contact.html" 
+                     class="btn btn-secondary btn-lg"
+                     onclick="trackPremiumInteraction('hero_cta_cooling'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_cooling'});"
+                     aria-label="Get premium cooling consultation">
+                    Schedule Consultation
+                  </a>
+                  <a href="tel:8056688329" 
+                     class="btn btn-outline btn-lg"
+                     onclick="trackPhoneClick(); trackPremiumInteraction('hero_phone_cooling');"
+                     aria-label="Call for immediate cooling service">
+                    Call Now
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -546,27 +553,29 @@
         <div class="swiper-slide relative">
           <img src="/assets/images/805-hvac-pro-conejo-valley-hero-02-furnace-service.jpg" 
                alt="Premium heating system installation in Westlake Village by 805 HVAC Pro" 
-               class="w-full h-72 sm:h-96 lg:h-[600px] object-cover" 
+               class="w-full h-screen object-cover" 
                loading="lazy"
                itemprop="image">
           <div class="hero-overlay"></div>
-          <div class="hero-content absolute inset-0 flex items-center justify-center text-white text-center p-4">
-            <div class="max-w-4xl">
-              <h2 class="hero-title">Sophisticated Heating Systems</h2>
-              <p class="hero-subtitle">Elevate your home's warmth with our state-of-the-art heating solutions, tailored for luxury properties throughout Thousand Oaks.</p>
-              <div class="space-x-4">
-                <a href="/contact.html" 
-                   class="btn btn-secondary btn-lg"
-                   onclick="trackPremiumInteraction('hero_cta_heating'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_heating'});"
-                   aria-label="Get premium heating consultation">
-                  Expert Consultation
-                </a>
-                <a href="/services.html" 
-                   class="btn btn-outline btn-lg"
-                   onclick="trackServiceInterest('heating'); gtag('event', 'click', {event_category: 'services', event_label: 'hero_heating_services'});"
-                   aria-label="View heating services">
-                  View Services
-                </a>
+          <div class="hero-content">
+            <div class="container">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="hero-title">Sophisticated Heating Systems</h2>
+                <p class="hero-subtitle">Elevate your home's warmth with our state-of-the-art heating solutions, tailored for luxury properties throughout Thousand Oaks.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                  <a href="/contact.html" 
+                     class="btn btn-secondary btn-lg"
+                     onclick="trackPremiumInteraction('hero_cta_heating'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_heating'});"
+                     aria-label="Get premium heating consultation">
+                    Expert Consultation
+                  </a>
+                  <a href="/services.html" 
+                     class="btn btn-outline btn-lg"
+                     onclick="trackServiceInterest('heating'); gtag('event', 'click', {event_category: 'services', event_label: 'hero_heating_services'});"
+                     aria-label="View heating services">
+                    View Services
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -576,27 +585,29 @@
         <div class="swiper-slide relative">
           <img src="/assets/images/805-hvac-pro-conejo-valley-hero-03-air-purifier.jpg" 
                alt="Advanced air purification systems for luxury homes in the 805 area" 
-               class="w-full h-72 sm:h-96 lg:h-[600px] object-cover" 
+               class="w-full h-screen object-cover" 
                loading="lazy"
                itemprop="image">
           <div class="hero-overlay"></div>
-          <div class="hero-content absolute inset-0 flex items-center justify-center text-white text-center p-4">
-            <div class="max-w-4xl">
-              <h2 class="hero-title">Pristine Air Quality</h2>
-              <p class="hero-subtitle">Breathe the purest air with our advanced purification and ventilation systems, ensuring optimal health and comfort for your family.</p>
-              <div class="space-x-4">
-                <a href="/contact.html" 
-                   class="btn btn-secondary btn-lg"
-                   onclick="trackPremiumInteraction('hero_cta_air_quality'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_air_quality'});"
-                   aria-label="Get air quality assessment">
-                  Free Assessment
-                </a>
-                <a href="tel:8056688329" 
-                   class="btn btn-outline btn-lg"
-                   onclick="trackPhoneClick(); trackPremiumInteraction('hero_phone_air_quality');"
-                   aria-label="Call for air quality consultation">
-                  (805) 668-8329
-                </a>
+          <div class="hero-content">
+            <div class="container">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="hero-title">Pristine Air Quality</h2>
+                <p class="hero-subtitle">Breathe the purest air with our advanced purification and ventilation systems, ensuring optimal health and comfort for your family.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                  <a href="/contact.html" 
+                     class="btn btn-secondary btn-lg"
+                     onclick="trackPremiumInteraction('hero_cta_air_quality'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_air_quality'});"
+                     aria-label="Get air quality assessment">
+                    Free Assessment
+                  </a>
+                  <a href="tel:8056688329" 
+                     class="btn btn-outline btn-lg"
+                     onclick="trackPhoneClick(); trackPremiumInteraction('hero_phone_air_quality');"
+                     aria-label="Call for air quality consultation">
+                    (805) 668-8329
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -606,27 +617,29 @@
         <div class="swiper-slide relative">
           <img src="/assets/images/805-hvac-pro-conejo-valley-hero-04-duct-install.jpg" 
                alt="Expert HVAC installation services for commercial and residential properties" 
-               class="w-full h-72 sm:h-96 lg:h-[600px] object-cover" 
+               class="w-full h-screen object-cover" 
                loading="lazy"
                itemprop="image">
           <div class="hero-overlay"></div>
-          <div class="hero-content absolute inset-0 flex items-center justify-center text-white text-center p-4">
-            <div class="max-w-4xl">
-              <h2 class="hero-title">Precision Installation</h2>
-              <p class="hero-subtitle">Our master craftsmen deliver flawless HVAC installations that exceed industry standards, ensuring decades of reliable performance.</p>
-              <div class="space-x-4">
-                <a href="/contact.html" 
-                   class="btn btn-secondary btn-lg"
-                   onclick="trackPremiumInteraction('hero_cta_installation'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_installation'});"
-                   aria-label="Get installation quote">
-                  Get Quote
-                </a>
-                <a href="/about.html" 
-                   class="btn btn-outline btn-lg"
-                   onclick="gtag('event', 'click', {event_category: 'about', event_label: 'hero_about'});"
-                   aria-label="Learn about our expertise">
-                  Our Expertise
-                </a>
+          <div class="hero-content">
+            <div class="container">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="hero-title">Precision Installation</h2>
+                <p class="hero-subtitle">Our master craftsmen deliver flawless HVAC installations that exceed industry standards, ensuring decades of reliable performance.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                  <a href="/contact.html" 
+                     class="btn btn-secondary btn-lg"
+                     onclick="trackPremiumInteraction('hero_cta_installation'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_installation'});"
+                     aria-label="Get installation quote">
+                    Get Quote
+                  </a>
+                  <a href="/about.html" 
+                     class="btn btn-outline btn-lg"
+                     onclick="gtag('event', 'click', {event_category: 'about', event_label: 'hero_about'});"
+                     aria-label="Learn about our expertise">
+                    Our Expertise
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -636,27 +649,29 @@
         <div class="swiper-slide relative">
           <img src="/assets/images/805-hvac-pro-conejo-valley-hero-05-outdoor-unit.jpg" 
                alt="Reliable outdoor HVAC units maintained by 805 HVAC Pro professionals" 
-               class="w-full h-72 sm:h-96 lg:h-[600px] object-cover" 
+               class="w-full h-screen object-cover" 
                loading="lazy"
                itemprop="image">
           <div class="hero-overlay"></div>
-          <div class="hero-content absolute inset-0 flex items-center justify-center text-white text-center p-4">
-            <div class="max-w-4xl">
-              <h2 class="hero-title">Unwavering Reliability</h2>
-              <p class="hero-subtitle">Trust in our commitment to excellence with 24/7 emergency service and comprehensive maintenance programs for complete peace of mind.</p>
-              <div class="space-x-4">
-                <a href="/contact.html" 
-                   class="btn btn-secondary btn-lg"
-                   onclick="trackPremiumInteraction('hero_cta_reliability'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_reliability'});"
-                   aria-label="Schedule maintenance service">
-                  Schedule Service
-                </a>
-                <a href="tel:8056688329" 
-                   class="btn btn-outline btn-lg"
-                   onclick="trackPhoneClick(); trackPremiumInteraction('hero_phone_emergency');"
-                   aria-label="Emergency HVAC service">
-                  Emergency Service
-                </a>
+          <div class="hero-content">
+            <div class="container">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="hero-title">Unwavering Reliability</h2>
+                <p class="hero-subtitle">Trust in our commitment to excellence with 24/7 emergency service and comprehensive maintenance programs for complete peace of mind.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                  <a href="/contact.html" 
+                     class="btn btn-secondary btn-lg"
+                     onclick="trackPremiumInteraction('hero_cta_reliability'); gtag('event', 'click', {event_category: 'cta', event_label: 'hero_reliability'});"
+                     aria-label="Schedule maintenance service">
+                    Schedule Service
+                  </a>
+                  <a href="tel:8056688329" 
+                     class="btn btn-outline btn-lg"
+                     onclick="trackPhoneClick(); trackPremiumInteraction('hero_phone_emergency');"
+                     aria-label="Emergency HVAC service">
+                    Emergency Service
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -665,16 +680,16 @@
       
       <!-- Enhanced Navigation -->
       <div class="swiper-pagination"></div>
-      <div class="swiper-button-next text-white opacity-75 hover:opacity-100 transition duration-200" 
+      <div class="swiper-button-next" 
            onclick="gtag('event', 'click', {event_category: 'ui', event_label: 'carousel_next'});"></div>
-      <div class="swiper-button-prev text-white opacity-75 hover:opacity-100 transition duration-200"
+      <div class="swiper-button-prev"
            onclick="gtag('event', 'click', {event_category: 'ui', event_label: 'carousel_prev'});"></div>
     </div>
   </section>
 
   <!-- Premium Services Overview Section -->
   <section id="services" class="section bg-white" itemscope itemtype="https://schema.org/Service">
-    <div class="container mx-auto px-4">
+    <div class="container">
       <div class="section-header">
         <h2 class="section-title" itemprop="name">Elite HVAC Services in Thousand Oaks & the 805 Area</h2>
         <p class="section-subtitle" itemprop="description">
@@ -684,26 +699,46 @@
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Premium Air Conditioning -->
-        <div class="card card-premium text-center" 
+        <div class="card card-premium text-center cursor-pointer" 
              onclick="trackServiceInterest('air_conditioning'); gtag('event', 'click', {event_category: 'services', event_label: 'ac_card'});"
              itemscope itemtype="https://schema.org/Service">
           <div class="card-body">
             <img src="/assets/images/805-hvac-pro-conejo-valley-hero-01-ac-unit.jpg" 
                  alt="Luxury air conditioning services in Thousand Oaks" 
-                 class="h-32 md:h-40 mx-auto mb-6 object-cover rounded-lg shadow-md"
+                 class="w-full h-48 object-cover rounded-xl shadow-md mb-6"
                  itemprop="image">
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800" itemprop="name">Premium Air Conditioning</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed" itemprop="description">
+            <h3 class="text-2xl font-semibold mb-4 text-neutral-800" itemprop="name">Premium Air Conditioning</h3>
+            <p class="text-neutral-600 mb-6 leading-relaxed" itemprop="description">
               Experience ultimate comfort with our top-tier air conditioning systems. From high-efficiency installations to precision repairs, we ensure your home maintains the perfect climate year-round.
             </p>
-            <ul class="text-left text-gray-600 space-y-2 mb-6">
-              <li>• High-efficiency system installations</li>
-              <li>• 24/7 emergency repair service</li>
-              <li>• Smart thermostat integration</li>
-              <li>• Energy optimization consultation</li>
-            </ul>
+            <div class="text-left space-y-2 mb-6">
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">High-efficiency system installations</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">24/7 emergency repair service</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Smart thermostat integration</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Energy optimization consultation</span>
+              </div>
+            </div>
             <a href="/contact.html" 
-               class="btn btn-primary"
+               class="btn btn-primary w-full"
                onclick="trackPremiumInteraction('service_cta_ac'); gtag('event', 'click', {event_category: 'cta', event_label: 'ac_learn_more'});">
               Learn More
             </a>
@@ -711,26 +746,46 @@
         </div>
 
         <!-- Sophisticated Heating -->
-        <div class="card card-premium text-center"
+        <div class="card card-premium text-center cursor-pointer"
              onclick="trackServiceInterest('heating'); gtag('event', 'click', {event_category: 'services', event_label: 'heating_card'});"
              itemscope itemtype="https://schema.org/Service">
           <div class="card-body">
             <img src="/assets/images/805-hvac-pro-conejo-valley-hero-02-furnace-service.jpg" 
                  alt="Luxury heating services in Westlake Village" 
-                 class="h-32 md:h-40 mx-auto mb-6 object-cover rounded-lg shadow-md"
+                 class="w-full h-48 object-cover rounded-xl shadow-md mb-6"
                  itemprop="image">
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800" itemprop="name">Sophisticated Heating</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed" itemprop="description">
+            <h3 class="text-2xl font-semibold mb-4 text-neutral-800" itemprop="name">Sophisticated Heating</h3>
+            <p class="text-neutral-600 mb-6 leading-relaxed" itemprop="description">
               Elevate your home's warmth with our premium heating solutions. Our expert technicians specialize in high-end furnaces, heat pumps, and radiant heating systems.
             </p>
-            <ul class="text-left text-gray-600 space-y-2 mb-6">
-              <li>• Premium furnace installations</li>
-              <li>• Heat pump system expertise</li>
-              <li>• Radiant heating solutions</li>
-              <li>• Comprehensive maintenance plans</li>
-            </ul>
+            <div class="text-left space-y-2 mb-6">
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Premium furnace installations</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Heat pump system expertise</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Radiant heating solutions</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Comprehensive maintenance plans</span>
+              </div>
+            </div>
             <a href="/contact.html" 
-               class="btn btn-primary"
+               class="btn btn-primary w-full"
                onclick="trackPremiumInteraction('service_cta_heating'); gtag('event', 'click', {event_category: 'cta', event_label: 'heating_learn_more'});">
               Learn More
             </a>
@@ -738,26 +793,46 @@
         </div>
 
         <!-- Advanced Air Quality -->
-        <div class="card card-premium text-center"
+        <div class="card card-premium text-center cursor-pointer"
              onclick="trackServiceInterest('air_quality'); gtag('event', 'click', {event_category: 'services', event_label: 'air_quality_card'});"
              itemscope itemtype="https://schema.org/Service">
           <div class="card-body">
             <img src="/assets/images/805-hvac-pro-conejo-valley-hero-03-air-purifier.jpg" 
                  alt="Advanced air quality solutions for luxury homes" 
-                 class="h-32 md:h-40 mx-auto mb-6 object-cover rounded-lg shadow-md"
+                 class="w-full h-48 object-cover rounded-xl shadow-md mb-6"
                  itemprop="image">
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800" itemprop="name">Advanced Air Quality</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed" itemprop="description">
+            <h3 class="text-2xl font-semibold mb-4 text-neutral-800" itemprop="name">Advanced Air Quality</h3>
+            <p class="text-neutral-600 mb-6 leading-relaxed" itemprop="description">
               Ensure the purest indoor environment with our state-of-the-art air purification systems. Perfect for families who prioritize health and wellness.
             </p>
-            <ul class="text-left text-gray-600 space-y-2 mb-6">
-              <li>• HEPA filtration systems</li>
-              <li>• UV-C sterilization technology</li>
-              <li>• Whole-home dehumidification</li>
-              <li>• Professional duct cleaning</li>
-            </ul>
+            <div class="text-left space-y-2 mb-6">
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">HEPA filtration systems</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">UV-C sterilization technology</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Whole-home dehumidification</span>
+              </div>
+              <div class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-gold-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-sm text-neutral-600">Professional duct cleaning</span>
+              </div>
+            </div>
             <a href="/contact.html" 
-               class="btn btn-primary"
+               class="btn btn-primary w-full"
                onclick="trackPremiumInteraction('service_cta_air_quality'); gtag('event', 'click', {event_category: 'cta', event_label: 'air_quality_learn_more'});">
               Learn More
             </a>
@@ -777,7 +852,7 @@
 
   <!-- Trust Indicators Section -->
   <section class="section bg-neutral-100" id="trust-indicators">
-    <div class="container mx-auto px-4">
+    <div class="container">
       <div class="section-header">
         <h2 class="section-title">Why Discerning Clients Choose 805 HVAC Pro</h2>
         <p class="section-subtitle">
@@ -787,24 +862,24 @@
       
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="text-center">
-          <div class="text-4xl font-bold text-primary-700 mb-2">15+</div>
-          <div class="text-lg font-semibold mb-2">Years of Excellence</div>
-          <p class="text-gray-600">Serving luxury properties with unmatched expertise</p>
+          <div class="text-5xl font-bold text-primary-700 mb-2">15+</div>
+          <div class="text-xl font-semibold mb-2 text-neutral-900">Years of Excellence</div>
+          <p class="text-neutral-600">Serving luxury properties with unmatched expertise</p>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold text-primary-700 mb-2">500+</div>
-          <div class="text-lg font-semibold mb-2">Satisfied Clients</div>
-          <p class="text-gray-600">Premium installations and services delivered</p>
+          <div class="text-5xl font-bold text-primary-700 mb-2">500+</div>
+          <div class="text-xl font-semibold mb-2 text-neutral-900">Satisfied Clients</div>
+          <p class="text-neutral-600">Premium installations and services delivered</p>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold text-primary-700 mb-2">24/7</div>
-          <div class="text-lg font-semibold mb-2">Emergency Service</div>
-          <p class="text-gray-600">Always available when you need us most</p>
+          <div class="text-5xl font-bold text-primary-700 mb-2">24/7</div>
+          <div class="text-xl font-semibold mb-2 text-neutral-900">Emergency Service</div>
+          <p class="text-neutral-600">Always available when you need us most</p>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold text-primary-700 mb-2">100%</div>
-          <div class="text-lg font-semibold mb-2">Satisfaction Guarantee</div>
-          <p class="text-gray-600">Your complete satisfaction is our priority</p>
+          <div class="text-5xl font-bold text-primary-700 mb-2">100%</div>
+          <div class="text-xl font-semibold mb-2 text-neutral-900">Satisfaction Guarantee</div>
+          <p class="text-neutral-600">Your complete satisfaction is our priority</p>
         </div>
       </div>
     </div>
@@ -813,37 +888,39 @@
   <!-- CTA Section -->
   <section class="section header" id="cta">
     <div class="hero-overlay"></div>
-    <div class="container mx-auto px-4 text-center relative z-10">
-      <h2 class="hero-title text-white mb-6">Ready to Experience Elite HVAC Service?</h2>
-      <p class="hero-subtitle text-white mb-8">
-        Join hundreds of satisfied clients who trust 805 HVAC Pro for their premium climate control needs.
-      </p>
-      <div class="space-x-4">
-        <a href="/contact.html" 
-           class="btn btn-secondary btn-xl"
-           onclick="trackPremiumInteraction('final_cta_contact'); gtag('event', 'click', {event_category: 'conversion', event_label: 'final_cta'});">
-          Schedule Your Consultation
-        </a>
-        <a href="tel:8056688329" 
-           class="btn btn-outline btn-xl text-white border-white hover:bg-white hover:text-primary-800"
-           onclick="trackPhoneClick(); trackPremiumInteraction('final_cta_phone');">
-          Call (805) 668-8329
-        </a>
+    <div class="hero-content">
+      <div class="container text-center">
+        <h2 class="hero-title text-white mb-6">Ready to Experience Elite HVAC Service?</h2>
+        <p class="hero-subtitle text-white mb-8">
+          Join hundreds of satisfied clients who trust 805 HVAC Pro for their premium climate control needs.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact.html" 
+             class="btn btn-secondary btn-xl"
+             onclick="trackPremiumInteraction('final_cta_contact'); gtag('event', 'click', {event_category: 'conversion', event_label: 'final_cta'});">
+            Schedule Your Consultation
+          </a>
+          <a href="tel:8056688329" 
+             class="btn btn-outline btn-xl"
+             onclick="trackPhoneClick(); trackPremiumInteraction('final_cta_phone');">
+            Call (805) 668-8329
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="header py-12 text-center shadow-inner" itemscope itemtype="https://schema.org/Organization" role="contentinfo">
-    <div class="container mx-auto px-4">
+  <footer class="header py-12 shadow-inner" itemscope itemtype="https://schema.org/Organization" role="contentinfo">
+    <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left mb-8">
         <!-- Company Info -->
         <div>
           <h3 class="text-xl font-semibold text-white mb-4" itemprop="name">805 HVAC Pro</h3>
-          <p class="text-gray-300 mb-4" itemprop="description">
+          <p class="text-white opacity-75 mb-4" itemprop="description">
             Elite HVAC services for discerning clients in Thousand Oaks and the 805 area.
           </p>
-          <div class="text-gray-300" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <div class="text-white opacity-75" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
             <span itemprop="addressLocality">Thousand Oaks</span>, 
             <span itemprop="addressRegion">CA</span> 
             <span itemprop="postalCode">91362</span>
@@ -853,18 +930,18 @@
         <!-- Services -->
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Premium Services</h4>
-          <ul class="space-y-2 text-gray-300">
-            <li><a href="/services.html" class="hover:text-gold-300" onclick="trackServiceInterest('air_conditioning');">Air Conditioning</a></li>
-            <li><a href="/services.html" class="hover:text-gold-300" onclick="trackServiceInterest('heating');">Heating Systems</a></li>
-            <li><a href="/services.html" class="hover:text-gold-300" onclick="trackServiceInterest('air_quality');">Air Quality</a></li>
-            <li><a href="/services.html" class="hover:text-gold-300" onclick="trackServiceInterest('maintenance');">Maintenance Plans</a></li>
+          <ul class="space-y-2 text-white opacity-75">
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('air_conditioning');">Air Conditioning</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('heating');">Heating Systems</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('air_quality');">Air Quality</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('maintenance');">Maintenance Plans</a></li>
           </ul>
         </div>
         
         <!-- Areas Served -->
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Areas Served</h4>
-          <ul class="space-y-2 text-gray-300">
+          <ul class="space-y-2 text-white opacity-75">
             <li>Thousand Oaks</li>
             <li>Westlake Village</li>
             <li>Camarillo</li>
@@ -877,14 +954,14 @@
         <!-- Contact -->
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
-          <div class="space-y-2 text-gray-300">
+          <div class="space-y-2 text-white opacity-75">
             <p itemprop="telephone">
-              <a href="tel:8056688329" class="hover:text-gold-300" onclick="trackPhoneClick();">
+              <a href="tel:8056688329" class="hover:text-gold-300 transition-colors" onclick="trackPhoneClick();">
                 (805) 668-8329
               </a>
             </p>
             <p itemprop="email">
-              <a href="mailto:info@805hvacpro.com" class="hover:text-gold-300">
+              <a href="mailto:info@805hvacpro.com" class="hover:text-gold-300 transition-colors">
                 info@805hvacpro.com
               </a>
             </p>
@@ -893,14 +970,14 @@
         </div>
       </div>
       
-      <div class="border-t border-gray-600 pt-8">
+      <div class="border-t border-white border-opacity-20 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-300 mb-4 md:mb-0">&copy; 2025 805 HVAC Pro. All rights reserved.</p>
-          <nav class="space-x-6" aria-label="Footer navigation">
-            <a href="/" class="text-gold-300 hover:text-gold-200 transition duration-200">Home</a>
-            <a href="/about.html" class="text-gold-300 hover:text-gold-200 transition duration-200">About</a>
-            <a href="/services.html" class="text-gold-300 hover:text-gold-200 transition duration-200">Services</a>
-            <a href="/contact.html" class="text-gold-300 hover:text-gold-200 transition duration-200">Contact</a>
+          <p class="text-white opacity-75 mb-4 md:mb-0">&copy; 2025 805 HVAC Pro. All rights reserved.</p>
+          <nav class="flex gap-6" aria-label="Footer navigation">
+            <a href="/" class="text-gold-300 hover:text-gold-200 transition-colors">Home</a>
+            <a href="/about.html" class="text-gold-300 hover:text-gold-200 transition-colors">About</a>
+            <a href="/services.html" class="text-gold-300 hover:text-gold-200 transition-colors">Services</a>
+            <a href="/contact.html" class="text-gold-300 hover:text-gold-200 transition-colors">Contact</a>
           </nav>
         </div>
       </div>
@@ -914,6 +991,7 @@
   <!-- Enhanced Swiper Initialization -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Swiper
       var swiper = new Swiper('.mySwiper', {
         loop: true,
         autoplay: {
@@ -923,9 +1001,6 @@
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + ' w-3 h-3 bg-white bg-opacity-50 rounded-full cursor-pointer"></span>';
-          },
         },
         navigation: {
           nextEl: '.swiper-button-next',
@@ -949,6 +1024,41 @@
           }
         }
       });
+
+      // Mobile Menu Functionality
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            menuToggle.setAttribute('aria-expanded', 'true');
+          } else {
+            mobileMenu.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+            mobileMenu.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.focus();
+          }
+        });
+      }
     });
   </script>
 </body>
