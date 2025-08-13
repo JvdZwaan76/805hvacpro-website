@@ -406,15 +406,15 @@ section[class*="header"] .btn-outline:hover {
   line-height: 1.6;
 }
 
-/* Section Styles */
+/* Section Styles - IMPROVED SPACING */
 .section {
-  padding: 4rem 0;
+  padding: 5rem 0;
   position: relative;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -437,6 +437,73 @@ section[class*="header"] .btn-outline:hover {
   margin: 0 auto;
   line-height: 1.6;
   font-weight: 400;
+}
+
+/* CTA Section - FIXED SPACING */
+section[class*="header"],
+section#cta,
+section#about-cta {
+  padding: 6rem 0;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  width: 100%;
+  clear: both;
+}
+
+section[class*="header"]::before,
+section#cta::before,
+section#about-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+section[class*="header"] .hero-overlay,
+section#cta .hero-overlay,
+section#about-cta .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 1;
+}
+
+section[class*="header"] .hero-content,
+section#cta .hero-content,
+section#about-cta .hero-content {
+  position: relative;
+  z-index: 20;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: auto;
+  width: 100%;
+}
+
+section[class*="header"] .hero-title,
+section#cta .hero-title,
+section#about-cta .hero-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 1.5rem;
+  color: white;
+  background: linear-gradient(135deg, white 0%, #fde68a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+section[class*="header"] .hero-subtitle,
+section#cta .hero-subtitle,
+section#about-cta .hero-subtitle {
+  font-size: clamp(1.125rem, 1.8vw, 1.25rem);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Grid System */
@@ -828,36 +895,206 @@ section[class*="header"] .btn-outline:hover {
   transform: translateX(4px);
 }
 
-/* Footer Links - FIXED CONTRAST */
+/* Footer - FIXED LAYOUT & BALANCE */
 footer {
   background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  margin-top: 0;
+  position: relative;
+  padding: 3rem 0 2rem 0;
 }
 
+footer .container {
+  max-width: 1200px;
+}
+
+/* Footer Grid - Better Balance */
+footer .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  footer .grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+/* Footer Text Styling */
 footer .text-white {
   color: white !important;
+}
+
+footer h3,
+footer h4 {
+  color: white !important;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+footer h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 footer a {
   color: #fde68a !important;
   transition: color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 footer a:hover {
   color: #fbbf24 !important;
+  text-decoration: none;
+  transform: translateX(2px);
 }
 
-footer .opacity-75 {
-  color: rgba(255, 255, 255, 0.8) !important;
+footer .opacity-75,
+footer p:not(h3):not(h4) {
+  color: rgba(255, 255, 255, 0.85) !important;
+  line-height: 1.6;
 }
 
-footer .border-white {
-  border-color: rgba(255, 255, 255, 0.2) !important;
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Responsive Design */
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer Bottom Border */
+footer .border-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* Footer Bottom Navigation */
+footer .border-t nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  footer .border-t nav {
+    justify-content: flex-end;
+  }
+}
+
+footer .border-t nav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Footer Copyright */
+footer .border-t p {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  footer .border-t p {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+/* Footer Flexbox for Bottom Section */
+footer .border-t > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  footer .border-t > div {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Ensure proper spacing between sections */
+.section + .section {
+  margin-top: 0;
+}
+
+/* Trust indicators section spacing */
+#trust-indicators {
+  padding: 4rem 0;
+}
+
+#trust-indicators .text-5xl {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+#trust-indicators .text-xl {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Service cards improvements */
+#services .card-body .text-2xl {
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+#services .card-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Better button spacing in cards */
+.card-body .btn {
+  margin-top: auto;
+}
+
+/* Ensure CTA section background covers properly */
+section#cta,
+section#about-cta,
+section[id*="cta"] {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+section#cta::before,
+section#about-cta::before,
+section[id*="cta"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Responsive Design - IMPROVED BALANCE */
 @media (max-width: 767px) {
   .hero {
-    height: 80vh;
+    height: 65vh;
+    min-height: 450px;
   }
   
   .hero-content {
@@ -865,21 +1102,40 @@ footer .border-white {
   }
   
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 1.5rem;
   }
   
   .section {
-    padding: 3rem 0;
+    padding: 3.5rem 0;
   }
   
   .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* CTA Section Mobile */
+  section[class*="header"] {
+    padding: 4rem 0;
+  }
+  
+  section[class*="header"] .hero-content {
+    padding: 2rem 1rem;
+  }
+  
+  section[class*="header"] .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  section[class*="header"] .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .btn {
@@ -918,6 +1174,11 @@ footer .border-white {
     margin-top: 0;
     margin-left: 1rem;
   }
+  
+  .hero {
+    height: 70vh;
+    min-height: 500px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -929,12 +1190,30 @@ footer .border-white {
   .section {
     padding: 5rem 0;
   }
+  
+  .hero {
+    height: 75vh;
+    max-height: 800px;
+  }
+  
+  /* Ensure CTA section has proper spacing on larger screens */
+  section[class*="header"] {
+    padding: 6rem 0;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:order-1 { order: 1; }
   .lg\:order-2 { order: 2; }
   .lg\:h-\[500px\] { height: 500px; }
+  
+  .section {
+    padding: 6rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 4rem;
+  }
 }
 
 /* Print Styles */
