@@ -72,15 +72,12 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
   
-  <!-- Preload Critical Assets -->
-  <link rel="preload" href="/styles.css" as="style">
-  <link rel="preload" href="/script.js" as="script">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
+  <!-- Preload Critical Assets (only above-the-fold resources) -->
   <link rel="preload" href="/assets/images/805-hvac-pro-conejo-valley-hero-04-duct-install.jpg" as="image" type="image/jpeg">
   
-  <!-- Styles -->
+  <!-- Styles (load immediately, not preloaded to avoid duplication) -->
   <link rel="stylesheet" href="/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
   
 
   
