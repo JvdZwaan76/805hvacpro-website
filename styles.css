@@ -80,6 +80,95 @@ p {
   .container { padding: 0 2rem; }
 }
 
+/* Breadcrumb Navigation Styles */
+.breadcrumb-nav {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  color: #94a3b8;
+  margin: 0 0.75rem;
+  font-weight: 400;
+}
+
+.breadcrumb-item a {
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.breadcrumb-item a:hover {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.breadcrumb-item a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.breadcrumb-item.active {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.breadcrumb-item:last-child {
+  color: #374151;
+}
+
+/* Breadcrumb Mobile Responsive */
+@media (max-width: 640px) {
+  .breadcrumb-nav {
+    padding: 0.75rem 0;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    margin: 0 0.5rem;
+  }
+}
+
+/* Breadcrumb subtle animation */
+.breadcrumb-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+.breadcrumb-item a:hover::after {
+  width: 100%;
+}
+
 /* Header & Navigation */
 .header {
   background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
@@ -955,6 +1044,24 @@ section#about-cta .hero-subtitle {
   border: 0;
 }
 
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999999;
+  padding: 8px 16px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  left: 6px !important;
+  top: 6px !important;
+}
+
 /* Animation Classes */
 .fade-in {
   animation: fadeIn 1s ease-out;
@@ -1436,7 +1543,7 @@ footer .social-yelp:hover {
 
 /* Print Styles */
 @media print {
-  .header, .btn, .nav, .hero, footer, .mobile-menu {
+  .header, .btn, .nav, .hero, footer, .mobile-menu, .breadcrumb-nav {
     display: none !important;
   }
   
