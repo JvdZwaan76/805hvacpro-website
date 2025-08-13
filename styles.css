@@ -683,6 +683,7 @@ section#about-cta .hero-subtitle {
 .gap-12 { gap: 3rem; }
 
 /* Spacing Utilities */
+.space-x-1 > * + * { margin-left: 0.25rem; }
 .space-x-2 > * + * { margin-left: 0.5rem; }
 .space-x-3 > * + * { margin-left: 0.75rem; }
 .space-x-4 > * + * { margin-left: 1rem; }
@@ -997,11 +998,15 @@ section#about-cta .hero-subtitle {
   width: 44px;
   height: 44px;
   margin-top: -22px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   color: white;
+  background: rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
 }
 
@@ -1009,6 +1014,26 @@ section#about-cta .hero-subtitle {
 .swiper-button-prev::after {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+/* Hide carousel controls on mobile and small tablets */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+  
+  .swiper-pagination {
+    bottom: 1.5rem !important;
+  }
+}
+
+/* Show controls only on larger screens */
+@media (min-width: 769px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex !important;
+  }
 }
 
 /* Footer */
@@ -1267,9 +1292,10 @@ footer .flex.space-x-4 a:hover svg {
     padding: 1.25rem;
   }
   
+  /* Ensure carousel controls are hidden on mobile */
   .swiper-button-next,
   .swiper-button-prev {
-    display: none;
+    display: none !important;
   }
 }
 
