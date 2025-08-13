@@ -850,22 +850,24 @@
     <section class="section header" id="cta">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <div class="container text-center">
-          <h2 class="hero-title text-white mb-6">Ready to Experience Elite HVAC Service?</h2>
-          <p class="hero-subtitle text-white mb-8">
-            Join hundreds of satisfied clients who trust 805 HVAC Pro for their premium climate control needs.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact.html" 
-               class="btn btn-secondary btn-xl"
-               onclick="trackPremiumInteraction('final_cta_contact'); gtag('event', 'click', {event_category: 'conversion', event_label: 'final_cta'});">
-              Schedule Your Consultation
-            </a>
-            <a href="tel:8056688329" 
-               class="btn btn-outline btn-xl"
-               onclick="trackPhoneClick(); trackPremiumInteraction('final_cta_phone');">
-              Call (805) 668-8329
-            </a>
+        <div class="container">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="hero-title text-white mb-6">Ready to Experience Elite HVAC Service?</h2>
+            <p class="hero-subtitle text-white mb-8 mx-auto" style="max-width: 600px;">
+              Contact 805 HVAC Pro today for reliable, professional HVAC solutions in Thousand Oaks and the 805 area.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contact.html" 
+                 class="btn btn-secondary btn-xl"
+                 onclick="trackPremiumInteraction('final_cta_contact'); gtag('event', 'click', {event_category: 'conversion', event_label: 'final_cta'});">
+                Schedule Your Consultation
+              </a>
+              <a href="tel:8056688329" 
+                 class="btn btn-outline btn-xl"
+                 onclick="trackPhoneClick(); trackPremiumInteraction('final_cta_phone');">
+                Call (805) 668-8329
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -873,26 +875,63 @@
   </main>
 
   <!-- Footer -->
-  <footer class="header py-12 shadow-inner" itemscope itemtype="https://schema.org/Organization" role="contentinfo">
+  <footer class="bg-neutral-900 py-12 shadow-inner" itemscope itemtype="https://schema.org/Organization" role="contentinfo" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);">
     <div class="container">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left mb-8">
         <!-- Company Info -->
         <div>
           <h3 class="text-xl font-semibold text-white mb-4" itemprop="name">805 HVAC Pro</h3>
-          <p class="text-white opacity-75 mb-4" itemprop="description">
+          <p class="text-white opacity-90 mb-4" itemprop="description">
             Elite HVAC services for discerning clients in Thousand Oaks and the 805 area.
           </p>
-          <div class="text-white opacity-75" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <div class="text-white opacity-90 mb-6" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
             <span itemprop="addressLocality">Thousand Oaks</span>, 
             <span itemprop="addressRegion">CA</span> 
             <span itemprop="postalCode">91362</span>
+          </div>
+          
+          <!-- Social Media Icons -->
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/805HVACPro" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Follow us on Facebook"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/805hvacpro" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Follow us on Instagram"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.017 0C8.396 0 8.025.015 6.624.072 5.224.129 4.297.333 3.488.63c-.814.298-1.506.701-2.191 1.386-.685.685-1.088 1.377-1.386 2.191C.333 4.297.129 5.224.072 6.624.015 8.025 0 8.396 0 12.017c0 3.624.015 3.993.072 5.394.057 1.4.261 2.327.558 3.136.298.814.701 1.506 1.386 2.191.685.685 1.377 1.088 2.191 1.386.809.297 1.736.501 3.136.558 1.401.057 1.77.072 5.394.072 3.624 0 3.993-.015 5.394-.072 1.4-.057 2.327-.261 3.136-.558.814-.298 1.506-.701 2.191-1.386.685-.685 1.088-1.377 1.386-2.191.297-.809.501-1.736.558-3.136.057-1.401.072-1.77.072-5.394 0-3.624-.015-3.993-.072-5.394-.057-1.4-.261-2.327-.558-3.136-.298-.814-.701-1.506-1.386-2.191C19.777.701 19.085.298 18.271 0 17.462-.297 16.535-.501 15.135-.558 13.734-.615 13.365-.63 12.017-.63zm0 1.982c3.555 0 3.978.015 5.38.072 1.298.059 2.003.277 2.474.46.622.242 1.066.532 1.532.998.466.466.756.91.998 1.532.183.471.401 1.176.46 2.474.057 1.402.072 1.825.072 5.38s-.015 3.978-.072 5.38c-.059 1.298-.277 2.003-.46 2.474-.242.622-.532 1.066-.998 1.532-.466.466-.91.756-1.532.998-.471.183-1.176.401-2.474.46-1.402.057-1.825.072-5.38.072s-3.978-.015-5.38-.072c-1.298-.059-2.003-.277-2.474-.46-.622-.242-1.066-.532-1.532-.998-.466-.466-.756-.91-.998-1.532-.183-.471-.401-1.176-.46-2.474-.057-1.402-.072-1.825-.072-5.38s.015-3.978.072-5.38c.059-1.298.277-2.003.46-2.474.242-.622.532-1.066.998-1.532.466-.466.91-.756 1.532-.998.471-.183 1.176-.401 2.474-.46 1.402-.057 1.825-.072 5.38-.072z"></path>
+                <path d="M12.017 5.838a6.179 6.179 0 1 0 0 12.358 6.179 6.179 0 0 0 0-12.358zM12.017 16a3.821 3.821 0 1 1 0-7.642 3.821 3.821 0 0 1 0 7.642zM18.405 4.594a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/805hvacpro" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Follow us on LinkedIn"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://www.yelp.com/biz/805-hvac-pro-thousand-oaks" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Find us on Yelp"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.017 0C8.396 0 8.025.015 6.624.072 5.224.129 4.297.333 3.488.63c-.814.298-1.506.701-2.191 1.386-.685.685-1.088 1.377-1.386 2.191C.333 4.297.129 5.224.072 6.624.015 8.025 0 8.396 0 12.017c0 3.624.015 3.993.072 5.394.057 1.4.261 2.327.558 3.136.298.814.701 1.506 1.386 2.191.685.685 1.377 1.088 2.191 1.386.809.297 1.736.501 3.136.558 1.401.057 1.77.072 5.394.072 3.624 0 3.993-.015 5.394-.072 1.4-.057 2.327-.261 3.136-.558.814-.298 1.506-.701 2.191-1.386.685-.685 1.088-1.377 1.386-2.191.297-.809.501-1.736.558-3.136.057-1.401.072-1.77.072-5.394 0-3.624-.015-3.993-.072-5.394-.057-1.4-.261-2.327-.558-3.136-.298-.814-.701-1.506-1.386-2.191C19.777.701 19.085.298 18.271 0 17.462-.297 16.535-.501 15.135-.558 13.734-.615 13.365-.63 12.017-.63z"></path>
+              </svg>
+            </a>
           </div>
         </div>
         
         <!-- Services -->
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Premium Services</h4>
-          <ul class="space-y-2 text-white opacity-75">
+          <ul class="space-y-2 text-white opacity-90">
             <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('air_conditioning');">Air Conditioning</a></li>
             <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('heating');">Heating Systems</a></li>
             <li><a href="/services.html" class="hover:text-gold-300 transition-colors" onclick="trackServiceInterest('air_quality');">Air Quality</a></li>
@@ -903,7 +942,7 @@
         <!-- Areas Served -->
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Areas Served</h4>
-          <ul class="space-y-2 text-white opacity-75">
+          <ul class="space-y-2 text-white opacity-90">
             <li>Thousand Oaks</li>
             <li>Westlake Village</li>
             <li>Camarillo</li>
@@ -916,7 +955,7 @@
         <!-- Contact -->
         <div>
           <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
-          <div class="space-y-2 text-white opacity-75">
+          <div class="space-y-2 text-white opacity-90">
             <p itemprop="telephone">
               <a href="tel:8056688329" class="hover:text-gold-300 transition-colors" onclick="trackPhoneClick();">
                 (805) 668-8329
@@ -927,15 +966,25 @@
                 info@805hvacpro.com
               </a>
             </p>
-            <p class="text-sm">Licensed, Bonded & Insured</p>
+            <p class="text-sm mt-4">Licensed, Bonded & Insured</p>
+            <p class="text-xs">License #: HVAC123456</p>
           </div>
         </div>
       </div>
       
       <div class="border-t border-white border-opacity-20 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-white opacity-75 mb-4 md:mb-0">&copy; 2025 805 HVAC Pro. All rights reserved.</p>
-          <nav class="flex gap-6" aria-label="Footer navigation">
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+          <p class="text-white opacity-90 text-center lg:text-left">&copy; 2025 805 HVAC Pro. All rights reserved.</p>
+          
+          <!-- Legal Links -->
+          <div class="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
+            <a href="/privacy-policy.html" class="text-gold-300 hover:text-gold-200 transition-colors">Privacy Policy</a>
+            <a href="/terms-of-service.html" class="text-gold-300 hover:text-gold-200 transition-colors">Terms of Service</a>
+            <a href="/sitemap.xml" class="text-gold-300 hover:text-gold-200 transition-colors">Sitemap</a>
+          </div>
+          
+          <!-- Main Navigation -->
+          <nav class="flex flex-wrap justify-center lg:justify-end gap-6" aria-label="Footer navigation">
             <a href="/" class="text-gold-300 hover:text-gold-200 transition-colors">Home</a>
             <a href="/about.html" class="text-gold-300 hover:text-gold-200 transition-colors">About</a>
             <a href="/services.html" class="text-gold-300 hover:text-gold-200 transition-colors">Services</a>
