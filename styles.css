@@ -485,6 +485,55 @@ section[class*="header"] .btn-outline:hover {
   min-height: 56px;
 }
 
+/* Emergency Button Mobile Fix */
+.emergency-btn {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive text for emergency button */
+.emergency-text-full {
+  display: inline;
+}
+
+.emergency-text-mobile {
+  display: none;
+}
+
+/* Mobile responsiveness for emergency button */
+@media (max-width: 640px) {
+  .emergency-btn {
+    white-space: normal;
+    line-height: 1.3;
+    padding: 1rem 1.5rem;
+    min-height: 60px;
+    font-size: 0.9rem;
+  }
+  
+  .emergency-text-full {
+    display: none;
+  }
+  
+  .emergency-text-mobile {
+    display: inline;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .emergency-btn {
+    font-size: 0.85rem;
+    padding: 0.875rem 1.25rem;
+    min-height: 56px;
+  }
+}
+
 /* Card Component */
 .card {
   background: white;
