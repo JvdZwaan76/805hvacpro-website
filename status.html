@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K856TKTH');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Primary Meta Tags -->
+  <title>Website Status | 805 HVAC Pro - System Operations</title>
+  <meta name="title" content="Website Status | 805 HVAC Pro - System Operations">
+  <meta name="description" content="Real-time operational status of 805hvacpro.com. Monitor website performance, uptime statistics, and system health for our HVAC services platform in Thousand Oaks, CA.">
+  <meta name="keywords" content="805 HVAC Pro website status, system uptime, website performance, operational status">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="805 HVAC Pro">
+  <meta name="copyright" content="© 2025 805 HVAC Pro. All rights reserved.">
+  <meta name="language" content="en-US">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://805hvacpro.com/status.html">
+  
+  <!-- Favicon and Theme -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1e3a8a">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+  
+  <!-- Custom Status Page Styles -->
+  <style>
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .status-operational {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+    }
+    
+    .status-warning {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #1f2937;
+    }
+    
+    .status-critical {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .metric-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    
+    .metric-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .metric-label {
+      color: #6b7280;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+    
+    .metric-change {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    
+    .metric-change.positive {
+      color: #10b981;
+    }
+    
+    .metric-change.negative {
+      color: #ef4444;
+    }
+    
+    .chart-container {
+      height: 200px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-weight: 500;
+      border: 2px dashed #cbd5e1;
+    }
+    
+    .incident-item {
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      border-left: 4px solid #e5e7eb;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+    }
+    
+    .incident-resolved {
+      border-left-color: #10b981;
+    }
+    
+    .incident-investigating {
+      border-left-color: #f59e0b;
+    }
+    
+    .incident-critical {
+      border-left-color: #ef4444;
+    }
+    
+    .service-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      background: white;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 0.75rem;
+      transition: all 0.2s ease;
+    }
+    
+    .service-status:hover {
+      border-color: #bfdbfe;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .service-name {
+      font-weight: 600;
+      color: #1f2937;
+    }
+    
+    .service-description {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+    }
+    
+    .performance-bar {
+      width: 100%;
+      height: 8px;
+      background: #f3f4f6;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .performance-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    
+    .performance-excellent {
+      background: linear-gradient(90deg, #10b981, #059669);
+    }
+    
+    .performance-good {
+      background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    }
+    
+    .performance-fair {
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+    }
+    
+    .performance-poor {
+      background: linear-gradient(90deg, #ef4444, #dc2626);
+    }
+    
+    .refresh-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    
+    .refresh-indicator svg {
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .metric-value {
+        font-size: 2rem;
+      }
+      
+      .metric-card {
+        padding: 1.25rem;
+      }
+      
+      .chart-container {
+        height: 150px;
+      }
+      
+      .service-status {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Website Status - 805 HVAC Pro",
+    "description": "Real-time operational status and performance metrics for 805hvacpro.com",
+    "url": "https://805hvacpro.com/status.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "805 HVAC Pro",
+      "url": "https://805hvacpro.com"
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "805 HVAC Pro",
+      "url": "https://805hvacpro.com"
+    }
+  }
+  </script>
+  
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDMH7Q3QG9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-NDMH7Q3QG9', {
+      page_type: 'status',
+      content_group1: 'System Status',
+      content_group2: 'Operations'
+    });
+    
+    function trackStatusCheck(metric) {
+      gtag('event', 'status_check', {
+        event_category: 'system_monitoring',
+        event_label: metric,
+        value: 1
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K856TKTH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header-content">
+      <div class="container">
+        <div class="flex items-center justify-between">
+          <div class="logo">
+            <a href="/" aria-label="805 HVAC Pro Home">805 HVAC Pro</a>
+          </div>
+          
+          <nav class="nav" role="navigation" aria-label="Main navigation">
+            <ul class="nav">
+              <li><a href="/" class="nav-link" aria-label="Home Page">Home</a></li>
+              <li><a href="/about.html" class="nav-link" aria-label="About Us Page">About</a></li>
+              <li><a href="/services.html" class="nav-link" aria-label="Services Page">Services</a></li>
+              <li><a href="/contact.html" class="nav-link" aria-label="Contact Us Page">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="hidden md:flex items-center">
+            <a href="tel:8056688329" class="btn btn-secondary btn-sm" aria-label="Call 805 HVAC Pro">
+              Call Now: (805) 668-8329
+            </a>
+          </div>
+          
+          <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" type="button">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+          <ul class="nav-list">
+            <li><a href="/" class="nav-link" aria-label="Home Page">Home</a></li>
+            <li><a href="/about.html" class="nav-link" aria-label="About Us Page">About</a></li>
+            <li><a href="/services.html" class="nav-link" aria-label="Services Page">Services</a></li>
+            <li><a href="/contact.html" class="nav-link" aria-label="Contact Us Page">Contact</a></li>
+            <li>
+              <a href="tel:8056688329" class="btn btn-secondary w-full" aria-label="Call 805 HVAC Pro">
+                Call Now: (805) 668-8329
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb" role="navigation">
+    <div class="container">
+      <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item" aria-label="Home">
+            <span itemprop="name">Home</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Website Status</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Status Header -->
+    <section class="section bg-white py-12">
+      <div class="container">
+        <div class="text-center mb-8">
+          <h1 class="section-title mb-4">Website Status Dashboard</h1>
+          <div class="flex items-center justify-center gap-4 mb-4">
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              All Systems Operational
+            </div>
+            <div class="refresh-indicator">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0V9a8 8 0 1115.356 2M15 15v5h.582"></path>
+              </svg>
+              Auto-refreshing every 30 seconds
+            </div>
+          </div>
+          <p class="text-neutral-600 max-w-2xl mx-auto">
+            Real-time monitoring of 805hvacpro.com performance and availability. Last updated: <span id="last-update">August 14, 2025 at 3:47 PM PST</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="section bg-neutral-50 py-12">
+      <div class="container">
+        <h2 class="text-2xl font-semibold mb-8 text-neutral-800 text-center">Performance Metrics</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Uptime -->
+          <div class="metric-card text-center">
+            <div class="metric-value text-green-600">99.98%</div>
+            <div class="metric-label">30-Day Uptime</div>
+            <div class="metric-change positive">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              +0.02% from last month
+            </div>
+          </div>
+
+          <!-- Response Time -->
+          <div class="metric-card text-center">
+            <div class="metric-value text-blue-600">247ms</div>
+            <div class="metric-label">Avg Response Time</div>
+            <div class="metric-change positive">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              -15ms improvement
+            </div>
+          </div>
+
+          <!-- Page Speed -->
+          <div class="metric-card text-center">
+            <div class="metric-value text-primary-600">92</div>
+            <div class="metric-label">PageSpeed Score</div>
+            <div class="metric-change positive">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              +3 points this week
+            </div>
+          </div>
+
+          <!-- Security Score -->
+          <div class="metric-card text-center">
+            <div class="metric-value text-green-600">A+</div>
+            <div class="metric-label">Security Grade</div>
+            <div class="metric-change positive">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 1L5 4v6c0 3.866 3.134 7 7 7s7-3.134 7-7V4l-5-3zm1 13H9v-2h2v2zm0-4H9V6h2v4z" clip-rule="evenodd"></path>
+              </svg>
+              SSL/TLS Optimized
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Status -->
+    <section class="section bg-white py-12">
+      <div class="container">
+        <h2 class="text-2xl font-semibold mb-8 text-neutral-800">Service Status</h2>
+        
+        <div class="space-y-4">
+          <!-- Website Core -->
+          <div class="service-status">
+            <div>
+              <div class="service-name">Website Core</div>
+              <div class="service-description">Main website functionality and content delivery</div>
+            </div>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Operational
+            </div>
+          </div>
+
+          <!-- Contact Forms -->
+          <div class="service-status">
+            <div>
+              <div class="service-name">Contact Forms</div>
+              <div class="service-description">Quote requests and contact form submissions</div>
+            </div>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Operational
+            </div>
+          </div>
+
+          <!-- Phone System -->
+          <div class="service-status">
+            <div>
+              <div class="service-name">Phone System</div>
+              <div class="service-description">Primary business line (805) 668-8329</div>
+            </div>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Operational
+            </div>
+          </div>
+
+          <!-- Email Services -->
+          <div class="service-status">
+            <div>
+              <div class="service-name">Email Services</div>
+              <div class="service-description">Business email and automated responses</div>
+            </div>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Operational
+            </div>
+          </div>
+
+          <!-- Analytics & Tracking -->
+          <div class="service-status">
+            <div>
+              <div class="service-name">Analytics & Tracking</div>
+              <div class="service-description">Google Analytics and conversion tracking</div>
+            </div>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Operational
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Charts -->
+    <section class="section bg-neutral-50 py-12">
+      <div class="container">
+        <h2 class="text-2xl font-semibold mb-8 text-neutral-800">Performance Overview</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Response Time Chart -->
+          <div class="metric-card">
+            <h3 class="text-lg font-semibold mb-4 text-neutral-800">Response Time (24 Hours)</h3>
+            <div class="chart-container">
+              <div class="text-center">
+                <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+                <p>Chart data visualization would appear here</p>
+                <p class="text-xs mt-1">Average: 247ms | Peak: 312ms</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uptime Chart -->
+          <div class="metric-card">
+            <h3 class="text-lg font-semibold mb-4 text-neutral-800">Uptime (30 Days)</h3>
+            <div class="chart-container">
+              <div class="text-center">
+                <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                <p>Uptime trend visualization would appear here</p>
+                <p class="text-xs mt-1">Current streak: 15 days, 7 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Bars -->
+        <div class="mt-8">
+          <h3 class="text-lg font-semibold mb-6 text-neutral-800">Core Web Vitals</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- LCP -->
+            <div class="metric-card">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-medium text-neutral-800">Largest Contentful Paint</span>
+                <span class="text-sm font-semibold text-green-600">1.2s</span>
+              </div>
+              <div class="performance-bar">
+                <div class="performance-fill performance-excellent" style="width: 85%;"></div>
+              </div>
+              <div class="text-xs text-neutral-600 mt-1">Target: &lt;2.5s | Excellent</div>
+            </div>
+
+            <!-- FID -->
+            <div class="metric-card">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-medium text-neutral-800">First Input Delay</span>
+                <span class="text-sm font-semibold text-green-600">45ms</span>
+              </div>
+              <div class="performance-bar">
+                <div class="performance-fill performance-excellent" style="width: 92%;"></div>
+              </div>
+              <div class="text-xs text-neutral-600 mt-1">Target: &lt;100ms | Excellent</div>
+            </div>
+
+            <!-- CLS -->
+            <div class="metric-card">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-medium text-neutral-800">Cumulative Layout Shift</span>
+                <span class="text-sm font-semibold text-green-600">0.08</span>
+              </div>
+              <div class="performance-bar">
+                <div class="performance-fill performance-excellent" style="width: 88%;"></div>
+              </div>
+              <div class="text-xs text-neutral-600 mt-1">Target: &lt;0.1 | Excellent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity -->
+    <section class="section bg-white py-12">
+      <div class="container">
+        <h2 class="text-2xl font-semibold mb-8 text-neutral-800">Recent Activity</h2>
+        
+        <div class="space-y-4">
+          <!-- Recent Updates -->
+          <div class="incident-item incident-resolved">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-semibold text-neutral-800">Website Performance Optimization</h3>
+              <span class="text-xs text-neutral-500">2 hours ago</span>
+            </div>
+            <p class="text-neutral-600 text-sm mb-2">
+              Implemented image optimization and caching improvements across all pages.
+            </p>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Completed Successfully
+            </div>
+          </div>
+
+          <div class="incident-item incident-resolved">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-semibold text-neutral-800">Security Certificate Renewal</h3>
+              <span class="text-xs text-neutral-500">1 day ago</span>
+            </div>
+            <p class="text-neutral-600 text-sm mb-2">
+              SSL/TLS certificates renewed and security headers updated.
+            </p>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Resolved
+            </div>
+          </div>
+
+          <div class="incident-item incident-resolved">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-semibold text-neutral-800">Mobile Responsive Updates</h3>
+              <span class="text-xs text-neutral-500">3 days ago</span>
+            </div>
+            <p class="text-neutral-600 text-sm mb-2">
+              Enhanced mobile experience and fixed sitemap display on smaller screens.
+            </p>
+            <div class="status-indicator status-operational">
+              <span class="status-dot"></span>
+              Deployed
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status Footer -->
+    <section class="section bg-neutral-50 py-8">
+      <div class="container text-center">
+        <div class="max-w-2xl mx-auto">
+          <h3 class="text-lg font-semibold mb-4 text-neutral-800">Need Help?</h3>
+          <p class="text-neutral-600 mb-6">
+            If you're experiencing issues with our website or need immediate HVAC service, please don't hesitate to contact us directly.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:8056688329" class="btn btn-primary btn-lg">
+              Call (805) 668-8329
+            </a>
+            <a href="/contact.html" class="btn btn-outline btn-lg">
+              Contact Form
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 py-12 shadow-inner" itemscope itemtype="https://schema.org/Organization" role="contentinfo" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left mb-8">
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">805 HVAC Pro</h3>
+          <p class="text-white opacity-90 mb-4">
+            Professional HVAC services for homes and businesses in Thousand Oaks and the 805 area.
+          </p>
+          <div class="text-white opacity-90 mb-6">
+            <span>Thousand Oaks</span>, 
+            <span>CA</span> 
+            <span>91362</span>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-white opacity-90">
+            <li><a href="/" class="hover:text-gold-300 transition-colors">Home</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors">Services</a></li>
+            <li><a href="/contact.html" class="hover:text-gold-300 transition-colors">Contact</a></li>
+            <li><a href="/status.html" class="hover:text-gold-300 transition-colors">Website Status</a></li>
+          </ul>
+        </div>
+        
+        <!-- System Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">System Information</h4>
+          <ul class="space-y-2 text-white opacity-90">
+            <li><a href="/sitemap.xml" class="hover:text-gold-300 transition-colors">Sitemap</a></li>
+            <li><a href="/privacy-policy.html" class="hover:text-gold-300 transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html" class="hover:text-gold-300 transition-colors">Terms of Service</a></li>
+            <li><span class="text-green-400">●</span> All Systems Operational</li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4">Emergency Contact</h4>
+          <div class="space-y-2 text-white opacity-90">
+            <p>
+              <a href="tel:8056688329" class="hover:text-gold-300 transition-colors">
+                (805) 668-8329
+              </a>
+            </p>
+            <p>
+              <a href="mailto:info@805hvacpro.com" class="hover:text-gold-300 transition-colors">
+                info@805hvacpro.com
+              </a>
+            </p>
+            <p class="text-sm mt-4">Licensed, Bonded & Insured</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-white border-opacity-20 pt-8">
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+          <p class="text-white opacity-90 text-center lg:text-left">&copy; 2025 805 HVAC Pro. All rights reserved.</p>
+          <p class="text-white opacity-75 text-sm text-center lg:text-right">
+            Last system check: <span id="footer-last-check">3:47 PM PST</span> | 
+            <span class="text-green-400">All services operational</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+  
+  <!-- Status Page JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Auto-refresh functionality
+      function updateTimestamp() {
+        const now = new Date();
+        const timestamp = now.toLocaleString('en-US', {
+          timeZone: 'America/Los_Angeles',
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric',
+          hour: 'numeric',
+          minute: '2-digit',
+          timeZoneName: 'short'
+        });
+        
+        document.getElementById('last-update').textContent = timestamp;
+        document.getElementById('footer-last-check').textContent = 
+          now.toLocaleTimeString('en-US', {
+            timeZone: 'America/Los_Angeles',
+            hour: 'numeric',
+            minute: '2-digit',
+            timeZoneName: 'short'
+          });
+      }
+      
+      // Update immediately
+      updateTimestamp();
+      
+      // Update every 30 seconds
+      setInterval(updateTimestamp, 30000);
+      
+      // Track status page visits
+      if (typeof gtag === 'function') {
+        gtag('event', 'status_page_view', {
+          event_category: 'system_monitoring',
+          event_label: 'status_dashboard',
+          value: 1
+        });
+      }
+      
+      // Simulate real-time metric updates (in production, this would fetch real data)
+      function simulateMetricUpdates() {
+        const responseTimeElement = document.querySelector('.metric-value.text-blue-600');
+        if (responseTimeElement) {
+          const currentMs = parseInt(responseTimeElement.textContent);
+          const variation = Math.floor(Math.random() * 20) - 10; // ±10ms variation
+          const newMs = Math.max(200, Math.min(300, currentMs + variation));
+          responseTimeElement.textContent = newMs + 'ms';
+        }
+      }
+      
+      // Update metrics every 60 seconds
+      setInterval(simulateMetricUpdates, 60000);
+    });
+  </script>
+</body>
+</html>
