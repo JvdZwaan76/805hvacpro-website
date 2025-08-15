@@ -68,9 +68,9 @@
       background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     }
     
-    /* Premium status header */
+    /* Premium status header - FIXED for readability */
     .status-header {
-      background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      background: #ffffff;
       border-bottom: 1px solid #e2e8f0;
       position: relative;
     }
@@ -88,7 +88,7 @@
     
     /* Enhanced readability for hero text */
     .status-header .section-title {
-      color: #1f2937;
+      color: #1f2937 !important;
       text-shadow: none;
       background: linear-gradient(135deg, #1f2937 0%, #1e40af 100%);
       -webkit-background-clip: text;
@@ -97,13 +97,25 @@
     }
     
     .status-header .section-subtitle {
-      color: #4b5563;
+      color: #4b5563 !important;
       font-weight: 400;
     }
     
     .status-header .section-subtitle .font-semibold {
-      color: #1f2937;
+      color: #1f2937 !important;
       font-weight: 600;
+    }
+    
+    /* Override any blue background that might be inherited */
+    .status-header,
+    .status-header .section,
+    .status-header .container {
+      background: #ffffff !important;
+    }
+    
+    /* Ensure spinner and auto-refresh text is readable */
+    .status-header .text-neutral-600 {
+      color: #6b7280 !important;
     }
     .status-spinner {
       display: inline-block;
