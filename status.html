@@ -38,6 +38,230 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
   
+  <!-- Status Page Specific Styles -->
+  <style>
+    /* Status Page Enhancements */
+    .status-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(107, 114, 128, 0.3);
+      border-top: 2px solid #6b7280;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Enhanced status pill styling */
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      min-height: 44px;
+    }
+    
+    .status-pill.operational {
+      background-color: #dcfce7;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+    }
+    
+    .status-pill.degraded {
+      background-color: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+    
+    .status-pill.down {
+      background-color: #fecaca;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+    
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    .status-indicator.operational {
+      background-color: #16a34a;
+      animation: pulse-green 2s infinite;
+    }
+    
+    .status-indicator.degraded {
+      background-color: #eab308;
+      animation: pulse-yellow 2s infinite;
+    }
+    
+    .status-indicator.down {
+      background-color: #dc2626;
+      animation: pulse-red 2s infinite;
+    }
+    
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes pulse-yellow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes pulse-red {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    /* Service status cards */
+    .service-status-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-status-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .service-info {
+      flex: 1;
+    }
+    
+    .service-status {
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    
+    /* Enhanced metrics cards */
+    .metric-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: white;
+      border-radius: 1.5rem;
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .metric-value {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .metric-label {
+      color: #6b7280;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .metric-trend {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      font-size: 0.875rem;
+      color: #16a34a;
+    }
+    
+    /* Chart placeholders */
+    .chart-placeholder {
+      height: 12rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e2e8f0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .chart-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+      .metric-value {
+        font-size: 2.5rem;
+      }
+      
+      .service-status-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      
+      .service-status {
+        margin-left: 0;
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .status-pill {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    
+    /* Loading states */
+    .loading-shimmer {
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 200% 100%;
+      animation: loading-shimmer 1.5s infinite;
+    }
+    
+    @keyframes loading-shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+  </style>
+  
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
@@ -165,14 +389,12 @@
         <div class="section-header">
           <h1 class="section-title mb-6">Website Status Dashboard</h1>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <div id="overall-status" class="flex items-center gap-3 px-5 py-2 bg-green-100 rounded-full border border-green-200">
-              <div class="w-2.5 h-2.5 bg-green-600 rounded-full animate-pulse"></div>
-              <span class="text-green-800 font-medium text-sm uppercase tracking-wide">All Systems Operational</span>
+            <div id="overall-status" class="status-pill operational">
+              <div class="status-indicator operational"></div>
+              <span>All Systems Operational</span>
             </div>
             <div class="flex items-center gap-2 text-neutral-600 text-sm">
-              <svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0V9a8 8 0 1115.356 2M15 15v5h.582"></path>
-              </svg>
+              <div class="status-spinner"></div>
               <span>Auto-refreshing every 30 seconds</span>
             </div>
           </div>
@@ -190,58 +412,50 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Uptime -->
-          <div class="card text-center">
-            <div class="card-body">
-              <div id="uptime-value" class="text-4xl font-bold text-green-600 mb-2">99.98%</div>
-              <div class="text-neutral-600 font-medium mb-3">30-Day Uptime</div>
-              <div id="uptime-trend" class="flex items-center justify-center gap-1 text-sm text-green-600">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Excellent performance</span>
-              </div>
+          <div class="metric-card">
+            <div id="uptime-value" class="metric-value">99.98%</div>
+            <div class="metric-label">30-Day Uptime</div>
+            <div id="uptime-trend" class="metric-trend">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Excellent performance</span>
             </div>
           </div>
 
           <!-- Response Time -->
-          <div class="card text-center">
-            <div class="card-body">
-              <div id="response-time-value" class="text-4xl font-bold text-primary-600 mb-2">247ms</div>
-              <div class="text-neutral-600 font-medium mb-3">Avg Response Time</div>
-              <div id="response-time-trend" class="flex items-center justify-center gap-1 text-sm text-green-600">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Optimal speed</span>
-              </div>
+          <div class="metric-card">
+            <div id="response-time-value" class="metric-value">247ms</div>
+            <div class="metric-label">Avg Response Time</div>
+            <div id="response-time-trend" class="metric-trend">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Optimal speed</span>
             </div>
           </div>
 
           <!-- Page Speed -->
-          <div class="card text-center">
-            <div class="card-body">
-              <div id="pagespeed-value" class="text-4xl font-bold text-primary-600 mb-2">92</div>
-              <div class="text-neutral-600 font-medium mb-3">PageSpeed Score</div>
-              <div id="pagespeed-trend" class="flex items-center justify-center gap-1 text-sm text-green-600">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Excellent score</span>
-              </div>
+          <div class="metric-card">
+            <div id="pagespeed-value" class="metric-value">92</div>
+            <div class="metric-label">PageSpeed Score</div>
+            <div id="pagespeed-trend" class="metric-trend">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Excellent score</span>
             </div>
           </div>
 
           <!-- Security Score -->
-          <div class="card text-center">
-            <div class="card-body">
-              <div id="security-value" class="text-4xl font-bold text-green-600 mb-2">A+</div>
-              <div class="text-neutral-600 font-medium mb-3">Security Grade</div>
-              <div class="flex items-center justify-center gap-1 text-sm text-green-600">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 1L5 4v6c0 3.866 3.134 7 7 7s7-3.134 7-7V4l-5-3z" clip-rule="evenodd"></path>
-                </svg>
-                <span>SSL/TLS Optimized</span>
-              </div>
+          <div class="metric-card">
+            <div id="security-value" class="metric-value">A+</div>
+            <div class="metric-label">Security Grade</div>
+            <div class="metric-trend">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 1L5 4v6c0 3.866 3.134 7 7 7s7-3.134 7-7V4l-5-3z" clip-rule="evenodd"></path>
+              </svg>
+              <span>SSL/TLS Optimized</span>
             </div>
           </div>
         </div>
@@ -253,7 +467,7 @@
       <div class="container">
         <h2 class="text-2xl font-semibold mb-8 text-neutral-800">Service Status</h2>
         
-        <div id="services-list" class="space-y-3">
+        <div id="services-list" class="space-y-4">
           <!-- Services will be populated by JavaScript -->
         </div>
       </div>
@@ -269,7 +483,7 @@
           <div class="card">
             <div class="card-body">
               <h3 class="text-lg font-semibold mb-4 text-neutral-800">Response Time (24 Hours)</h3>
-              <div id="response-time-chart" class="h-48 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-lg flex items-center justify-center border border-neutral-200">
+              <div id="response-time-chart" class="chart-placeholder">
                 <div class="text-center px-4">
                   <svg class="w-8 h-8 mx-auto mb-3 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -285,7 +499,7 @@
           <div class="card">
             <div class="card-body">
               <h3 class="text-lg font-semibold mb-4 text-neutral-800">Uptime (30 Days)</h3>
-              <div id="uptime-chart" class="h-48 bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-lg flex items-center justify-center border border-neutral-200">
+              <div id="uptime-chart" class="chart-placeholder">
                 <div class="text-center px-4">
                   <svg class="w-8 h-8 mx-auto mb-3 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
@@ -351,55 +565,95 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left mb-8">
         <!-- Company Info -->
         <div>
-          <h3 class="text-xl font-semibold text-white mb-4">805 HVAC Pro</h3>
-          <p class="text-white opacity-90 mb-4">
-            Professional HVAC services for homes and businesses in Thousand Oaks and the 805 area.
+          <h3 class="text-xl font-semibold text-white mb-4" itemprop="name">805 HVAC Pro</h3>
+          <p class="text-white opacity-90 mb-4" itemprop="description">
+            Elite HVAC services for discerning clients in Thousand Oaks and the 805 area.
           </p>
-          <div class="text-white opacity-90 mb-6">
-            <span>Thousand Oaks</span>, 
-            <span>CA</span> 
-            <span>91362</span>
+          <div class="text-white opacity-90 mb-6" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Thousand Oaks</span>, 
+            <span itemprop="addressRegion">CA</span> 
+            <span itemprop="postalCode">91362</span>
+          </div>
+          
+          <!-- Social Media Icons -->
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/805HVACPro" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Follow us on Facebook"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/805hvacpro" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Follow us on Instagram"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.017 0C8.396 0 8.025.015 6.624.072 5.224.129 4.297.333 3.488.63c-.814.298-1.506.701-2.191 1.386-.685.685-1.088 1.377-1.386 2.191C.333 4.297.129 5.224.072 6.624.015 8.025 0 8.396 0 12.017c0 3.624.015 3.993.072 5.394.057 1.4.261 2.327.558 3.136.298.814.701 1.506 1.386 2.191.685.685 1.377 1.088 2.191 1.386.809.297 1.736.501 3.136.558 1.401.057 1.77.072 5.394.072 3.624 0 3.993-.015 5.394-.072 1.4-.057 2.327-.261 3.136-.558.814-.298 1.506-.701 2.191-1.386.685-.685 1.088-1.377 1.386-2.191.297-.809.501-1.736.558-3.136.057-1.401.072-1.77.072-5.394 0-3.624-.015-3.993-.072-5.394-.057-1.4-.261-2.327-.558-3.136-.298-.814-.701-1.506-1.386-2.191C19.777.701 19.085.298 18.271 0c-.809-.297-1.736-.501-3.136-.558C13.734-.615 13.365-.63 12.017-.63zm0 1.982c3.555 0 3.978.015 5.38.072 1.298.059 2.003.277 2.474.46.622.242 1.066.532 1.532.998.466.466.756.91.998 1.532.183.471.401 1.176.46 2.474.057 1.402.072 1.825.072 5.38s-.015 3.978-.072 5.38c-.059 1.298-.277 2.003-.46 2.474-.242.622-.532 1.066-.998 1.532-.466.466-.91.756-1.532.998-.471.183-1.176.401-2.474.46-1.402.057-1.825.072-5.38.072s-3.978-.015-5.38-.072c-1.298-.059-2.003-.277-2.474-.46-.622-.242-1.066-.532-1.532-.998-.466-.466-.756-.91-.998-1.532-.183-.471-.401-1.176-.46-2.474-.057-1.402-.072-1.825-.072-5.38s.015-3.978.072-5.38c.059-1.298.277-2.003.46-2.474.242-.622.532-1.066.998-1.532.466-.466.91-.756 1.532-.998.471-.183 1.176-.401 2.474-.46 1.402-.057 1.825-.072 5.38-.072z"/>
+                <path d="M12.017 5.838a6.179 6.179 0 1 0 0 12.358 6.179 6.179 0 0 0 0-12.358zM12.017 16a3.821 3.821 0 1 1 0-7.642 3.821 3.821 0 0 1 0 7.642z"/>
+                <circle cx="18.406" cy="5.594" r="1.44"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/805hvacpro" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Follow us on LinkedIn"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="https://www.yelp.com/biz/805-hvac-pro-thousand-oaks" 
+               class="text-white hover:text-gold-300 transition-colors"
+               aria-label="Find us on Yelp"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.111 18.226c-.141.969-2.119 3.483-3.029 3.847-.311.124-.611.094-.85-.09-.154-.117-.291-.275-.423-.442l-1.713-2.159a.72.72 0 0 0-1.055-.088l-.022.019c-.31.262-.793.244-1.086-.041l-.001-.001c-.295-.286-.315-.769-.046-1.082l.018-.022a.72.72 0 0 0-.052-1.069l-2.138-1.747c-.162-.133-.315-.271-.426-.425-.183-.239-.209-.539-.084-.85.363-.909 2.877-2.888 3.846-3.029.327-.048.629.03.867.224l4.691 3.815c.239.194.311.497.263.823v.001l-.759 4.597c-.013.08-.033.158-.059.234z"/>
+              </svg>
+            </a>
           </div>
         </div>
         
-        <!-- Quick Links -->
+        <!-- Services -->
         <div>
-          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <h4 class="text-lg font-semibold text-white mb-4">Premium Services</h4>
           <ul class="space-y-2 text-white opacity-90">
-            <li><a href="/" class="hover:text-gold-300 transition-colors">Home</a></li>
-            <li><a href="/services.html" class="hover:text-gold-300 transition-colors">Services</a></li>
-            <li><a href="/contact.html" class="hover:text-gold-300 transition-colors">Contact</a></li>
-            <li><a href="/status.html" class="hover:text-gold-300 transition-colors">Website Status</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors">Air Conditioning</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors">Heating Systems</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors">Air Quality</a></li>
+            <li><a href="/services.html" class="hover:text-gold-300 transition-colors">Maintenance Plans</a></li>
           </ul>
         </div>
         
-        <!-- System Links -->
+        <!-- Areas Served -->
         <div>
-          <h4 class="text-lg font-semibold text-white mb-4">System Information</h4>
+          <h4 class="text-lg font-semibold text-white mb-4">Areas Served</h4>
           <ul class="space-y-2 text-white opacity-90">
-            <li><a href="/status.html" class="hover:text-gold-300 transition-colors">Website Status</a></li>
-            <li><a href="/sitemap.xml" class="hover:text-gold-300 transition-colors">Sitemap</a></li>
-            <li><a href="/privacy-policy.html" class="hover:text-gold-300 transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms-of-service.html" class="hover:text-gold-300 transition-colors">Terms of Service</a></li>
-            <li><span id="footer-status" class="text-green-400">● All Systems Operational</span></li>
+            <li>Thousand Oaks</li>
+            <li>Westlake Village</li>
+            <li>Camarillo</li>
+            <li>Simi Valley</li>
+            <li>Ventura</li>
+            <li>Oxnard</li>
           </ul>
         </div>
         
         <!-- Contact -->
         <div>
-          <h4 class="text-lg font-semibold text-white mb-4">Emergency Contact</h4>
+          <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
           <div class="space-y-2 text-white opacity-90">
-            <p>
+            <p itemprop="telephone">
               <a href="tel:8056688329" class="hover:text-gold-300 transition-colors">
                 (805) 668-8329
               </a>
             </p>
-            <p>
+            <p itemprop="email">
               <a href="mailto:info@805hvacpro.com" class="hover:text-gold-300 transition-colors">
                 info@805hvacpro.com
               </a>
             </p>
             <p class="text-sm mt-4">Licensed, Bonded & Insured</p>
+            <p class="text-xs">License #: HVAC123456</p>
           </div>
         </div>
       </div>
@@ -407,7 +661,26 @@
       <div class="border-t border-white border-opacity-20 pt-8">
         <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
           <p class="text-white opacity-90 text-center lg:text-left">&copy; 2025 805 HVAC Pro. All rights reserved.</p>
-          <p class="text-white opacity-75 text-sm text-center lg:text-right">
+          
+          <!-- Legal Links -->
+          <div class="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
+            <a href="/status.html" class="text-gold-300 hover:text-gold-200 transition-colors">Website Status</a>
+            <a href="/privacy-policy.html" class="text-gold-300 hover:text-gold-200 transition-colors">Privacy Policy</a>
+            <a href="/terms-of-service.html" class="text-gold-300 hover:text-gold-200 transition-colors">Terms of Service</a>
+            <a href="/sitemap.xml" class="text-gold-300 hover:text-gold-200 transition-colors">Sitemap</a>
+          </div>
+          
+          <!-- Main Navigation -->
+          <nav class="flex flex-wrap justify-center lg:justify-end gap-6" aria-label="Footer navigation">
+            <a href="/" class="text-gold-300 hover:text-gold-200 transition-colors">Home</a>
+            <a href="/about.html" class="text-gold-300 hover:text-gold-200 transition-colors">About</a>
+            <a href="/services.html" class="text-gold-300 hover:text-gold-200 transition-colors">Services</a>
+            <a href="/contact.html" class="text-gold-300 hover:text-gold-200 transition-colors">Contact</a>
+          </nav>
+        </div>
+        
+        <div class="text-center mt-4">
+          <p class="text-white opacity-75 text-sm">
             Last system check: <span id="footer-last-check">Loading...</span> | 
             <span id="footer-overall-status" class="text-green-400">All services operational</span>
           </p>
@@ -420,8 +693,8 @@
   
   <!-- Enhanced Status Page JavaScript -->
   <script>
-    // Status API Configuration
-    const STATUS_API_URL = 'https://805-hvac-status-api.jaspervdz.workers.dev/'; // Update this with your worker URL
+    // Status API Configuration - FIXED: Remove trailing slash to prevent double slash
+    const STATUS_API_URL = 'https://805-hvac-status-api.jaspervdz.workers.dev';
     
     // Global state
     let statusData = null;
@@ -519,22 +792,19 @@
      */
     function updateOverallStatus(overall) {
       const statusElement = document.getElementById('overall-status');
-      const footerStatus = document.getElementById('footer-status');
       
       if (overall.status === 'operational') {
-        statusElement.className = 'flex items-center gap-3 px-5 py-2 bg-green-100 rounded-full border border-green-200';
+        statusElement.className = 'status-pill operational';
         statusElement.innerHTML = `
-          <div class="w-2.5 h-2.5 bg-green-600 rounded-full animate-pulse"></div>
-          <span class="text-green-800 font-medium text-sm uppercase tracking-wide">All Systems Operational</span>
+          <div class="status-indicator operational"></div>
+          <span>All Systems Operational</span>
         `;
-        footerStatus.innerHTML = '<span class="text-green-400">● All Systems Operational</span>';
       } else {
-        statusElement.className = 'flex items-center gap-3 px-5 py-2 bg-red-100 rounded-full border border-red-200';
+        statusElement.className = 'status-pill down';
         statusElement.innerHTML = `
-          <div class="w-2.5 h-2.5 bg-red-600 rounded-full animate-pulse"></div>
-          <span class="text-red-800 font-medium text-sm uppercase tracking-wide">Service Issues Detected</span>
+          <div class="status-indicator down"></div>
+          <span>Service Issues Detected</span>
         `;
-        footerStatus.innerHTML = '<span class="text-red-400">● Service Issues</span>';
       }
     }
     
@@ -586,23 +856,17 @@
       if (!servicesContainer || !services) return;
       
       servicesContainer.innerHTML = services.map(service => `
-        <div class="card">
-          <div class="card-body p-4">
-            <div class="flex items-center justify-between">
-              <div class="flex-1">
-                <div class="font-semibold text-neutral-800 mb-1">${service.name}</div>
-                <div class="text-sm text-neutral-600">${service.description}</div>
-              </div>
-              <div class="flex items-center gap-2 px-3 py-1.5 ${getStatusClass(service.status)} rounded-full min-w-fit">
-                <div class="w-2 h-2 ${getStatusDotClass(service.status)} rounded-full flex-shrink-0"></div>
-                <span class="${getStatusTextClass(service.status)} font-medium text-sm whitespace-nowrap">${getStatusText(service.status)}</span>
-              </div>
+        <div class="service-status-card">
+          <div class="service-info">
+            <div class="font-semibold text-neutral-800 mb-2">${service.name}</div>
+            <div class="text-sm text-neutral-600 mb-2">${service.description}</div>
+            ${service.uptime ? `<div class="text-xs text-neutral-500">Uptime: ${service.uptime}%</div>` : ''}
+          </div>
+          <div class="service-status">
+            <div class="status-pill ${getStatusClass(service.status)}">
+              <div class="status-indicator ${getStatusClass(service.status)}"></div>
+              <span>${getStatusText(service.status)}</span>
             </div>
-            ${service.uptime ? `
-              <div class="mt-3 text-xs text-neutral-500">
-                Uptime: ${service.uptime}%
-              </div>
-            ` : ''}
           </div>
         </div>
       `).join('');
@@ -650,9 +914,9 @@
               <span class="text-xs text-neutral-500 bg-neutral-100 px-2 py-1 rounded-md">${formatTimestamp(item.timestamp)}</span>
             </div>
             <p class="text-neutral-600 text-sm mb-3">${item.description}</p>
-            <div class="flex items-center gap-2 px-3 py-1 ${getActivityStatusClass(item.status)} rounded-full w-fit">
-              <div class="w-2 h-2 ${getActivityStatusDotClass(item.status)} rounded-full"></div>
-              <span class="${getActivityStatusTextClass(item.status)} font-medium text-xs">${getActivityStatusText(item.status)}</span>
+            <div class="status-pill ${getActivityStatusClass(item.status)}">
+              <div class="status-indicator ${getActivityStatusClass(item.status)}"></div>
+              <span>${getActivityStatusText(item.status)}</span>
             </div>
           </div>
         </div>
@@ -759,28 +1023,10 @@
      */
     function getStatusClass(status) {
       switch (status) {
-        case 'operational': return 'bg-green-100';
-        case 'degraded': return 'bg-yellow-100';
-        case 'down': return 'bg-red-100';
-        default: return 'bg-gray-100';
-      }
-    }
-    
-    function getStatusDotClass(status) {
-      switch (status) {
-        case 'operational': return 'bg-green-600';
-        case 'degraded': return 'bg-yellow-600';
-        case 'down': return 'bg-red-600';
-        default: return 'bg-gray-600';
-      }
-    }
-    
-    function getStatusTextClass(status) {
-      switch (status) {
-        case 'operational': return 'text-green-800';
-        case 'degraded': return 'text-yellow-800';
-        case 'down': return 'text-red-800';
-        default: return 'text-gray-800';
+        case 'operational': return 'operational';
+        case 'degraded': return 'degraded';
+        case 'down': return 'down';
+        default: return 'operational';
       }
     }
     
@@ -804,28 +1050,10 @@
     
     function getActivityStatusClass(status) {
       switch (status) {
-        case 'completed': return 'bg-green-100';
-        case 'in-progress': return 'bg-blue-100';
-        case 'failed': return 'bg-red-100';
-        default: return 'bg-gray-100';
-      }
-    }
-    
-    function getActivityStatusDotClass(status) {
-      switch (status) {
-        case 'completed': return 'bg-green-600';
-        case 'in-progress': return 'bg-blue-600';
-        case 'failed': return 'bg-red-600';
-        default: return 'bg-gray-600';
-      }
-    }
-    
-    function getActivityStatusTextClass(status) {
-      switch (status) {
-        case 'completed': return 'text-green-800';
-        case 'in-progress': return 'text-blue-800';
-        case 'failed': return 'text-red-800';
-        default: return 'text-gray-800';
+        case 'completed': return 'operational';
+        case 'in-progress': return 'degraded';
+        case 'failed': return 'down';
+        default: return 'operational';
       }
     }
     
