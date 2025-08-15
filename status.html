@@ -208,6 +208,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+        padding: 1.25rem;
       }
       
       .service-status {
@@ -220,6 +221,125 @@
       .status-pill {
         justify-content: center;
         width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+      }
+      
+      /* Better mobile spacing */
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .section-header {
+        margin-bottom: 2rem;
+      }
+      
+      /* Mobile grid improvements */
+      .grid {
+        gap: 1rem;
+      }
+      
+      /* Charts on mobile */
+      .card-body {
+        padding: 1rem;
+      }
+      
+      /* Mobile status indicator */
+      .status-indicator {
+        width: 8px;
+        height: 8px;
+      }
+      
+      /* Mobile hero adjustments */
+      .section-title {
+        font-size: 1.875rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      
+      /* Mobile metric cards */
+      .metric-card {
+        padding: 1.5rem 1rem;
+      }
+      
+      /* Mobile Core Web Vitals */
+      #core-web-vitals {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      /* Mobile activity cards */
+      .card {
+        margin-bottom: 1rem;
+      }
+      
+      /* Mobile spinner */
+      .status-spinner {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    
+    /* Extra small screens (phones) */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 0.75rem;
+      }
+      
+      .metric-value {
+        font-size: 2rem;
+      }
+      
+      .metric-card {
+        padding: 1.25rem 0.75rem;
+      }
+      
+      .service-status-card {
+        padding: 1rem;
+      }
+      
+      .status-pill {
+        font-size: 0.75rem;
+        padding: 0.625rem 0.875rem;
+      }
+      
+      .section-title {
+        font-size: 1.625rem;
+      }
+      
+      /* Smaller touch targets for very small screens */
+      .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8rem;
+      }
+      
+      /* Card spacing on tiny screens */
+      .card-body {
+        padding: 0.875rem;
+      }
+    }
+    
+    /* Landscape phone optimization */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .section {
+        padding: 2rem 0;
+      }
+      
+      .section-header {
+        margin-bottom: 1.5rem;
+      }
+      
+      .metric-card {
+        padding: 1rem 0.75rem;
+      }
+      
+      .metric-value {
+        font-size: 2rem;
       }
     }
     
@@ -1140,11 +1260,11 @@
               data: data,
               borderColor: '#3b82f6',
               backgroundColor: 'rgba(59, 130, 246, 0.1)',
-              borderWidth: 2,
+              borderWidth: window.innerWidth < 768 ? 1.5 : 2,
               fill: true,
               tension: 0.4,
-              pointRadius: 3,
-              pointHoverRadius: 5,
+              pointRadius: window.innerWidth < 768 ? 2 : 3,
+              pointHoverRadius: window.innerWidth < 768 ? 4 : 5,
               pointBackgroundColor: '#3b82f6',
               pointBorderColor: '#ffffff',
               pointBorderWidth: 2
@@ -1166,6 +1286,12 @@
                 borderColor: '#3b82f6',
                 borderWidth: 1,
                 cornerRadius: 8,
+                titleFont: {
+                  size: window.innerWidth < 768 ? 12 : 14
+                },
+                bodyFont: {
+                  size: window.innerWidth < 768 ? 11 : 13
+                },
                 callbacks: {
                   label: function(context) {
                     return `${Math.round(context.parsed.y)}ms`;
@@ -1185,8 +1311,11 @@
                   display: false
                 },
                 ticks: {
-                  maxTicksLimit: 6,
-                  color: '#6b7280'
+                  maxTicksLimit: window.innerWidth < 768 ? 4 : 6,
+                  color: '#6b7280',
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  }
                 }
               },
               y: {
@@ -1199,6 +1328,9 @@
                 },
                 ticks: {
                   color: '#6b7280',
+                  font: {
+                    size: window.innerWidth < 768 ? 10 : 12
+                  },
                   callback: function(value) {
                     return value + 'ms';
                   }
